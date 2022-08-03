@@ -8,9 +8,7 @@ export const formDataSlice = createSlice({
   name: "formData",
   initialState: {
     annualCO2Emissions: 0, // decimal numbers turned to Int in back end
-    treePurchases: [
-      { date: { month: currentMonth, year: currentYear }, trees: 0 },
-    ], // array item = { date: 0, trees: 0 }
+    treePurchases: [{ month: currentMonth, year: currentYear, trees: 0 }], // array item = { date: 0, trees: 0 }
     treeCost: { initial: 120, upkeep: 12, currency: "dollars" },
     maxAnualPurchase: 55,
     maxTreeOffset: {
@@ -25,7 +23,7 @@ export const formDataSlice = createSlice({
     setAnnualCO2Emissions: (state, action) => {
       state.annualCO2Consumption = action.payload;
     },
-    addPurchase: (state, action) => {
+    addPurchaseMonth: (state, action) => {
       state.treePurchases.push(action.payload);
     },
     deletePurchase: (state, action) => {

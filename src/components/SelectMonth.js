@@ -1,10 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 import { addPurchase } from "../app/formDataSlice";
-import { months } from "../config/months";
 import react, { useState } from "react";
-
-export default function SelectMonth(state) {
+import { months } from "../config/months";
+export default function SelectYear(state) {
   // const { treePurchases } = useSelector((state) => state.formData);
   // const dispatch = useDispatch();
   // const { index, setTreePurchaseConstruct } = state;
@@ -18,10 +17,6 @@ export default function SelectMonth(state) {
     // dispatch(setTreePurchaseConstruct(option.value));
     setMonth(option.value);
   }
-
-  const today = new Date();
-  const currentMonth = months[today.getMonth()];
-  const currentYear = today.getFullYear();
 
   return (
     <>
@@ -38,19 +33,4 @@ export default function SelectMonth(state) {
       </p>
     </>
   );
-
-  // return (
-  //   <select
-  //     value={treePurchases[treePurchases.length - 1].date.month || currentMonth}
-  //     onChange={(e) => dispatch()}
-  //   >
-  //     {months.map((month, i) => {
-  //       return (
-  //         <option key={i} value={i}>
-  //           {month}
-  //         </option>
-  //       );
-  //     })}
-  //   </select>
-  // );
 }

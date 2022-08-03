@@ -16,8 +16,6 @@ export default function Purchases() {
           <th scope="col">Number of Trees</th>
           <th scope="col"></th>
         </tr>
-        <SelectMonth />
-
         {treePurchases.map((purchase, index) => {
           return <Purchase key={index} index={index}></Purchase>;
         })}

@@ -1,5 +1,6 @@
 import SelectMonth from "./SelectMonth";
 import React, { useState } from "react";
+import SelectYear from "./SelectYear";
 
 export default function Purchase(state) {
   const [treePurchaseConstruct, setTreePurchaseConstruct] = useState({
@@ -18,6 +19,7 @@ export default function Purchase(state) {
           index={index}
           setTreePurchaseConstruct={setTreePurchaseConstruct}
         />
+        <SelectYear />
       </td>
       <td></td>
       <td>

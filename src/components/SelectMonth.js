@@ -19,18 +19,12 @@ export default function SelectYear(state) {
   }
 
   return (
-    <>
-      <Select
-        // defaultInputValue="" <-- pull from local storage option?
-        options={optionList}
-        placeholder="select month"
-        onChange={handleSelect}
-        aria-label="Select month for trees purchase entry"
-      />
-
-      <p>
-        {month} {months[month]}
-      </p>
-    </>
+    <Select
+      // defaultInputValue="" <-- pull from local storage option?
+      options={optionList}
+      placeholder="select month"
+      onChange={handleSelect}
+      aria-label="Select month for trees purchase entry"
+    />
   );
 }

@@ -20,33 +20,12 @@ export default function SelectMonth(state) {
   }
 
   return (
-    <>
-      <Select
-        // defaultInputValue="" <-- pull from local storage option?
-        options={optionList}
-        placeholder="select year"
-        onChange={handleSelect}
-        aria-label="Select year for trees purchase entry"
-      />
-
-      <p>
-        {year} {years[year]}
-      </p>
-    </>
+    <Select
+      // defaultInputValue="" <-- pull from local storage option?
+      options={optionList}
+      placeholder="select year"
+      onChange={handleSelect}
+      aria-label="Select year for trees purchase entry"
+    />
   );
-
-  // return (
-  //   <select
-  //     value={treePurchases[treePurchases.length - 1].date.month || currentMonth}
-  //     onChange={(e) => dispatch()}
-  //   >
-  //     {months.map((month, i) => {
-  //       return (
-  //         <option key={i} value={i}>
-  //           {month}
-  //         </option>
-  //       );
-  //     })}
-  //   </select>
-  // );
 }

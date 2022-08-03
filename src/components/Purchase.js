@@ -1,6 +1,7 @@
 import SelectMonth from "./SelectMonth";
 import React, { useState } from "react";
 import SelectYear from "./SelectYear";
+import InputNoOfTrees from "./InputNoOfTrees";
 
 export default function Purchase(state) {
   const [treePurchaseConstruct, setTreePurchaseConstruct] = useState({
@@ -21,7 +22,9 @@ export default function Purchase(state) {
         />
         <SelectYear />
       </td>
-      <td></td>
+      <td>
+        <InputNoOfTrees />
+      </td>
       <td>
         {" "}
         <button></button>

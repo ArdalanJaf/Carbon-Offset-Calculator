@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Purchase from "./Purchase";
+import SelectMonth from "./SelectMonth";
 
 export default function Purchases() {
   const { treePurchases } = useSelector((state) => state.formData);
@@ -15,6 +16,7 @@ export default function Purchases() {
           <th scope="col">Number of Trees</th>
           <th scope="col"></th>
         </tr>
+        <SelectMonth />
 
         {treePurchases.map((purchase, index) => {
           return <Purchase key={index} index={index}></Purchase>;

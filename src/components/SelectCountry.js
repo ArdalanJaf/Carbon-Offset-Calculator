@@ -1,6 +1,6 @@
 import React from "react";
-import countriesCO2 from "../config/countriesCO2";
 import { useDispatch, useSelector } from "react-redux";
+import countriesCO2 from "../config/countriesCO2";
 import { setAnnualCO2Emissions } from "../app/formDataSlice";
 import Select from "react-select";
 
@@ -21,7 +21,7 @@ export default function SelectCountry() {
   return (
     <>
       <Select
-        // defaultInputValue=""
+        // defaultInputValue="" <-- pull from local storage option?
         options={optionList}
         placeholder="select country"
         onChange={handleSelect}

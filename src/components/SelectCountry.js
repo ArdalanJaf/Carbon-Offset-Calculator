@@ -2,6 +2,7 @@ import React from "react";
 import countriesCO2 from "../config/countriesCO2";
 import Select from "react-select";
 import { Controller } from "react-hook-form";
+import ErrorMessage from "./ErrorMessage";
 
 export default function SelectCountry(props) {
   const { control, errors } = props;
@@ -36,7 +37,9 @@ export default function SelectCountry(props) {
         )}
         rules={{ required: true }}
       />
-      {errors.annualCO2Emissions && <p>{errors.annualCO2Emissions.type}</p>}
+      {errors.annualCO2Emissions && (
+        <ErrorMessage type={errors.annualCO2Emissions.type} />
+      )}
     </>
   );
 }

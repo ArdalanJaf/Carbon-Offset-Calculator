@@ -2,6 +2,7 @@ import React from "react";
 import years from "../config/years";
 import Select from "react-select";
 import { Controller } from "react-hook-form";
+import ErrorMessage from "./ErrorMessage";
 
 export default function Selectyear(props) {
   const { index, control, errors } = props;
@@ -33,7 +34,7 @@ export default function Selectyear(props) {
         rules={{ required: true }}
       />
       {errors.treePurchases?.[`${index}`]?.year && (
-        <p>{errors.treePurchases[`${index}`].year.type}</p>
+        <ErrorMessage type={errors.treePurchases[`${index}`].year.type} />
       )}
     </>
   );

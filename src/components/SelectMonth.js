@@ -2,6 +2,7 @@ import React from "react";
 import { months } from "../config/months";
 import Select from "react-select";
 import { Controller } from "react-hook-form";
+import ErrorMessage from "./ErrorMessage";
 
 export default function SelectMonth(props) {
   const { index, control, errors } = props;
@@ -32,7 +33,7 @@ export default function SelectMonth(props) {
         rules={{ required: true }}
       />
       {errors.treePurchases?.[`${index}`]?.month && (
-        <p>{errors.treePurchases[`${index}`].month.type}</p>
+        <ErrorMessage type={errors.treePurchases[`${index}`].month.type} />
       )}
     </>
   );

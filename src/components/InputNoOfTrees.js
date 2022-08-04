@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorMessage from "./ErrorMessage";
 
 export default function InputNoOfTrees(props) {
   const { index, register, errors } = props;
@@ -14,7 +15,7 @@ export default function InputNoOfTrees(props) {
         placeholder="number of trees"
       />
       {errors.treePurchases?.[`${index}`]?.trees && (
-        <p>{errors.treePurchases[`${index}`].trees.type}</p>
+        <ErrorMessage type={errors.treePurchases[`${index}`].trees.type} />
       )}
     </>
   );

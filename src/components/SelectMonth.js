@@ -17,15 +17,16 @@ export default function SelectMonth(props) {
         control={control}
         render={({ value, field }) => (
           <Select
-            aria-label="Select month for trees purchase entry"
             options={optionList}
+            // defaultInputValue to allow user to load previous form from API or local storage.
             defaultInputValue={
               field.value &&
               optionList.find((c) => c.value === field.value).label
             }
-            placeholder="select month"
             //   value={monthsList.find((c) => c.value === value)}
             onChange={(val) => field.onChange(val.value)}
+            placeholder="Select month..."
+            aria-label="Select month for trees purchase entry"
           />
         )}
         rules={{ required: true }}

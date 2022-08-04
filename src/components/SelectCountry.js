@@ -14,6 +14,7 @@ export default function SelectCountry(props) {
     };
   });
 
+  //BUG: on reset displayed input stays the same (but value does reset). Not connected to defaultInputValue
   return (
     <>
       <Controller
@@ -22,13 +23,14 @@ export default function SelectCountry(props) {
         render={({ value, field }) => (
           <Select
             options={optionList}
-            // LOAD DATA FROM LOCAL STORAGE IF USER SAVED BEFORE?
+            // defaultInputValue to allow user to load previous form from API or local storage.
             defaultInputValue={
               field.value &&
               optionList.find((c) => c.value === field.value).label
             }
+            // value={optionList.find((c) => c.value === value)}
             onChange={(val) => field.onChange(val.value)}
-            placeholder="select country"
+            placeholder="Select country..."
             aria-label="Select your country to set your average annual CO2 emmisions "
           />
         )}

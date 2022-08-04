@@ -4,6 +4,7 @@ import SelectCountry from "./SelectCountry";
 import SelectMonth from "./SelectMonth";
 import SelectYear from "./SelectYear";
 import InputNoOfTrees from "./InputNoOfTrees";
+import sendFormData from "../utils/sendData";
 
 export default function App() {
   const {
@@ -24,10 +25,16 @@ export default function App() {
     name: "treePurchases",
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    sendFormData(data);
+    console.log(data);
+  };
+  {
+    console.log(fields);
+  }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <SelectCountry control={control} errors={errors} />
+      <SelectCountry key={fields[0].id} control={control} errors={errors} />
 
       <ul>
         {fields.map((field, index) => (
@@ -55,7 +62,7 @@ export default function App() {
         onClick={() => {
           reset({
             annualCO2Emissions: "",
-            treePurchases: [{ month: "1", year: "2030", trees: "1" }],
+            treePurchases: [{ month: "", year: "", trees: "" }],
           });
         }}
       >

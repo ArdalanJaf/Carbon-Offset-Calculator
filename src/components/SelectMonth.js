@@ -11,6 +11,8 @@ export default function SelectMonth(props) {
     return { value: index.toString(), label: month };
   });
 
+  // console.log(optionList);
+
   return (
     <>
       <Controller

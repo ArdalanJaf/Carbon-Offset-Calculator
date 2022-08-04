@@ -15,7 +15,6 @@ export default function SelectCountry(props) {
     };
   });
 
-  //BUG: on reset displayed input stays the same (but value does reset). Not connected to defaultInputValue
   return (
     <>
       <Controller

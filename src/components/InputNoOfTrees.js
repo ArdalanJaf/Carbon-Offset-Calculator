@@ -4,6 +4,7 @@ import ErrorMessage from "./ErrorMessage";
 export default function InputNoOfTrees(props) {
   const { index, register, errors } = props;
 
+  // NEED TO MAKE PATTERN ONLY ACCEPT MAX NUMBER (default 55)
   return (
     <>
       <input

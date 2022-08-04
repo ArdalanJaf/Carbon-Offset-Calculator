@@ -1,5 +1,5 @@
 import React from "react";
-import { years } from "../config/years";
+import years from "../config/years";
 import Select from "react-select";
 import { Controller } from "react-hook-form";
 
@@ -7,7 +7,7 @@ export default function Selectyear(props) {
   const { index, control, errors } = props;
 
   const optionList = years.map((year) => {
-    return { value: year, label: year.toString() };
+    return { value: year, label: year };
   });
 
   return (

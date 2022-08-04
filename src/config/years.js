@@ -9,7 +9,7 @@ const currentYear = today.getFullYear(); // format: yyyy
 
 // Creates list of years from current year to maxYears specified.
 for (let i = currentYear; i < currentYear + maxYears; i++) {
-  years.toString().push(i);
+  years.push(i.toString());
 }
 
 export default years;

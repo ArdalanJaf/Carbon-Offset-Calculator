@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm, useFieldArray, Controller } from "react-hook-form";
+import InputNoOfTrees from "./InputNoOfTrees";
 import SelectCountry from "./SelectCountry";
 import SelectMonth from "./SelectMonth";
 import SelectYear from "./SelectYear";
@@ -13,7 +14,7 @@ export default function App() {
   } = useForm({
     defaultValues: {
       annualCO2Emissions: "",
-      treePurchases: [{ month: "", year: "", trees: "" }],
+      treePurchases: [{ month: "", year: "", trees: "10" }],
     },
   });
 
@@ -34,6 +35,12 @@ export default function App() {
             <span>{index + 1}</span>
             <SelectMonth index={index} control={control} errors={errors} />
             <SelectYear index={index} control={control} errors={errors} />
+            <InputNoOfTrees
+              index={index}
+              control={control}
+              errors={errors}
+              register={register}
+            />
             <button type="button" onClick={() => remove(index)}>
               Delete
             </button>

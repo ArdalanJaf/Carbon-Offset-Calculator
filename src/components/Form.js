@@ -1,9 +1,8 @@
 import React from "react";
 import { useForm, useFieldArray, Controller } from "react-hook-form";
-import countriesCO2 from "../config/countriesCO2";
-import Select from "react-select";
 import SelectCountry from "./SelectCountry";
 import SelectMonth from "./SelectMonth";
+import SelectYear from "./SelectYear";
 
 export default function App() {
   const {
@@ -34,6 +33,7 @@ export default function App() {
           <li key={field.id}>
             <span>{index + 1}</span>
             <SelectMonth index={index} control={control} errors={errors} />
+            <SelectYear index={index} control={control} errors={errors} />
             <button type="button" onClick={() => remove(index)}>
               Delete
             </button>

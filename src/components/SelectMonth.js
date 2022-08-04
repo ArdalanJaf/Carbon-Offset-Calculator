@@ -1,30 +1,38 @@
-import { useDispatch, useSelector } from "react-redux";
-import Select from "react-select";
-import { addPurchase } from "../app/formDataSlice";
-import react, { useState } from "react";
+import React from "react";
 import { months } from "../config/months";
-export default function SelectYear(state) {
-  // const { treePurchases } = useSelector((state) => state.formData);
-  // const dispatch = useDispatch();
-  // const { index, setTreePurchaseConstruct } = state;
-  const [month, setMonth] = useState(null);
+import Select from "react-select";
+import { Controller } from "react-hook-form";
+
+export default function SelectMonth(props) {
+  const { index, control, errors } = props;
 
   const optionList = months.map((month, index) => {
-    return { value: index, label: month };
+    return { value: index.toString(), label: month };
   });
 
-  function handleSelect(option) {
-    // dispatch(setTreePurchaseConstruct(option.value));
-    setMonth(option.value);
-  }
-
   return (
-    <Select
-      // defaultInputValue="" <-- pull from local storage option?
-      options={optionList}
-      placeholder="select month"
-      onChange={handleSelect}
-      aria-label="Select month for trees purchase entry"
-    />
+    <>
+      <Controller
+        name={`treePurchases.${index}.month`}
+        control={control}
+        render={({ value, field }) => (
+          <Select
+            aria-label="Select month for trees purchase entry"
+            options={optionList}
+            defaultInputValue={
+              field.value &&
+              optionList.find((c) => c.value === field.value).label
+            }
+            placeholder="select month"
+            //   value={monthsList.find((c) => c.value === value)}
+            onChange={(val) => field.onChange(val.value)}
+          />
+        )}
+        rules={{ required: true }}
+      />
+      {errors.treePurchases?.[`${index}`]?.month && (
+        <p>{errors.treePurchases[`${index}`].month.type}</p>
+      )}
+    </>
   );
 }

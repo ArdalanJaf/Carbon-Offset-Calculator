@@ -13,7 +13,6 @@ export default function SelectCountry(props) {
       label: country.name,
     };
   });
-  console.log(optionList);
 
   return (
     <>

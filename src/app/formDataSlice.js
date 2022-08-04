@@ -8,7 +8,7 @@ export const formDataSlice = createSlice({
   name: "formData",
   initialState: {
     annualCO2Emissions: 0, // decimal numbers turned to Int in back end
-    treePurchases: [{ month: currentMonth, year: currentYear, trees: 0 }], // array item = { date: 0, trees: 0 }
+    treePurchases: [{ month: null, year: null, trees: 0 }], // array item = { date: 0, trees: 0 }
     treeCost: { initial: 120, upkeep: 12, currency: "dollars" },
     maxAnualPurchase: 55,
     maxTreeOffset: {

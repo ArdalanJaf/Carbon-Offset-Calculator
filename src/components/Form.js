@@ -5,6 +5,7 @@ import SelectMonth from "./SelectMonth";
 import SelectYear from "./SelectYear";
 import InputNoOfTrees from "./InputNoOfTrees";
 import sendFormData from "../utils/sendData";
+import sortTP from "../utils/sortTP";
 
 export default function App() {
   const {
@@ -26,12 +27,11 @@ export default function App() {
   });
 
   const onSubmit = (data) => {
-    sendFormData(data);
-    console.log(data);
+    data.treePurchases.sort(sortTP);
+    console.log(data.treePurchases);
+    //sendDate(data)
   };
-  {
-    console.log(fields);
-  }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <SelectCountry key={fields[0].id} control={control} errors={errors} />
@@ -61,13 +61,17 @@ export default function App() {
         type="button"
         onClick={() => {
           reset({
-            annualCO2Emissions: "",
-            treePurchases: [{ month: "", year: "", trees: "" }],
+            annualCO2Emissions: "8.56",
+            treePurchases: [
+              { month: "1", year: "2023", trees: "87" },
+              { month: "1", year: "2022", trees: "87" },
+            ],
           });
         }}
       >
         Clear
       </button>
+      <div></div>
       <input type="submit" />
     </form>
   );

@@ -10,7 +10,7 @@ export default function InputNoOfTrees(props) {
       <input
         {...register(`treePurchases.${index}.trees`, {
           required: true,
-          pattern: /^[0-9]*$/,
+          pattern: /^[0-9]*$/, //\b([1-9]|[0-4][0-9]|3[0-5])\b
           maxLength: 10,
         })}
         placeholder="number of trees"

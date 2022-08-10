@@ -11,8 +11,6 @@ export default function SelectMonth(props) {
     return { value: index.toString(), label: month };
   });
 
-  // console.log(optionList);
-
   return (
     <>
       <Controller
@@ -26,7 +24,6 @@ export default function SelectMonth(props) {
               field.value &&
               optionList.find((c) => c.value === field.value).label
             }
-            //   value={monthsList.find((c) => c.value === value)}
             onChange={(val) => field.onChange(val.value)}
             placeholder="Select month..."
             aria-label="Select month for trees purchase entry"

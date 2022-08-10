@@ -28,7 +28,6 @@ export default function SelectCountry(props) {
               field.value &&
               optionList.find((c) => c.value === field.value).label
             }
-            // value={optionList.find((c) => c.value === value)}
             onChange={(val) => field.onChange(val.value)}
             placeholder="Select country..."
             aria-label="Select your country to set your average annual CO2 emmisions "

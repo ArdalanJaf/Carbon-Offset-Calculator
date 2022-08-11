@@ -1,13 +1,19 @@
 import React from "react";
 import Form from "./components/Form";
 import { useSelector } from "react-redux";
+import Summary from "./components/Summary";
+// import Graphs from "./components/Graphs";
 
 function App() {
   const resultData = useSelector((state) => state.resultData);
 
   return (
     <div>
-      <Form />
+      <div>
+        <Form />
+        {resultData.stats && <Summary />}
+      </div>
+      <div>{/* <Graphs /> */}</div>
     </div>
   );
 }

@@ -1,28 +1,25 @@
 import { API_URL } from "../config/API_URL";
 import axios from "axios";
+// import { useDispatch } from "react-redux";
+// import { setGraphData } from "../app/graphDataSlice";
 
 // Send form to back-end.
-const sendFormData = async (payload) => {
+const SendFormData = async (payload) => {
+  // const dispatch = useDispatch();
+
   try {
-    const result = await axios.post(
-      API_URL + "/calculate",
-      JSON.stringify(payload)
-    );
-    console.log(result);
+    const result = await axios.post(API_URL + "/calculate", payload);
 
-    // notify user that API is down, advise to email me.
     if (result.data.status === 0) {
-      alert("API error: " + result);
-
-      // notify user of errors
+      console.log("API error: " + result);
     } else {
-      console.log("data sent");
+      console.log(result.data.graphData);
+      return result.data.graphData;
+      // dispatch(setGraphData(result.data.graphData));
     }
   } catch (error) {
-    alert("API down " + error);
-    // console.log(error);
-    // console.log("more specific: ", error.response.data);
+    console.log("API down " + error);
   }
 };
 
-export default sendFormData;
+export default SendFormData;

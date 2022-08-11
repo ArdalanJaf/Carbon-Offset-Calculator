@@ -4,13 +4,12 @@ import ErrorMessage from "./ErrorMessage";
 export default function InputNoOfTrees(props) {
   const { index, register, errors } = props;
 
-  // NEED TO MAKE PATTERN ONLY ACCEPT MAX NUMBER (default 55)
   return (
     <>
       <input
         {...register(`treePurchases.${index}.trees`, {
           required: true,
-          pattern: /^[0-9]*$/, //\b([1-9]|[0-4][0-9]|3[0-5])\b
+          pattern: /^[0-9]*$/,
           maxLength: 10,
         })}
         placeholder="number of trees"

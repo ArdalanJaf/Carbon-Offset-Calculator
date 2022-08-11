@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let today = new Date();
-const currentMonth = today.getMonth();
-const currentYear = today.getFullYear();
-
 export const formDataSlice = createSlice({
   name: "formData",
   initialState: {

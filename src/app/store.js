@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import formDataReducer from "./formDataSlice";
+// import formTrackerReducer from "./formTracker";
+import resultDataReducer from "./resultDataSlice";
 
 export const store = configureStore({
   reducer: {
-    formData: formDataReducer,
+    resultData: resultDataReducer,
+    // formTracker: formTrackerReducer,
   },
 });

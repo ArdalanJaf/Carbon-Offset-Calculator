@@ -1,5 +1,4 @@
 export default function sortTP(tp1, tp2) {
-  console.log(tp1);
   if (Number(tp1.year) < Number(tp2.year)) {
     return -1;
   } else if (Number(tp1.year) > Number(tp2.year)) {

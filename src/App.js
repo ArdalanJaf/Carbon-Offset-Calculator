@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./components/Form";
 import { useSelector } from "react-redux";
 import Summary from "./components/Summary";
-// import Graphs from "./components/Graphs";
+import Graphs from "./components/Graphs";
 
 function App() {
   const resultData = useSelector((state) => state.resultData);
@@ -13,7 +13,7 @@ function App() {
         <Form />
         {resultData.stats && <Summary />}
       </div>
-      <div>{/* <Graphs /> */}</div>
+      <div>{resultData.stats && <Graphs />}</div>
     </div>
   );
 }

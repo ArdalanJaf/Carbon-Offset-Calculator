@@ -1,7 +1,7 @@
 import { API_URL } from "../config/API_URL";
 import axios from "axios";
 // import { useDispatch } from "react-redux";
-// import { setGraphData } from "../app/graphDataSlice";
+// import { setResultData } from "../app/resultDataSlice";
 
 // Send form to back-end.
 const SendFormData = async (payload) => {
@@ -13,9 +13,9 @@ const SendFormData = async (payload) => {
     if (result.data.status === 0) {
       console.log("API error: " + result);
     } else {
-      console.log(result.data.graphData);
-      return result.data.graphData;
-      // dispatch(setGraphData(result.data.graphData));
+      // console.log(result.data.graphData);
+      return result.data.resultData;
+      // dispatch(setGraphData(result.data.resultData));
     }
   } catch (error) {
     console.log("API down " + error);

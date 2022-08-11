@@ -43,8 +43,9 @@ export default function App() {
   const onSubmit = async (data) => {
     data.treePurchases.sort(sortTP);
     data.config = defaultConfig;
-    const results = await SendFormData(data);
-    dispatch(setResultData(results));
+    const resultData = await SendFormData(data);
+    // console.log(resultData);
+    dispatch(setResultData(resultData));
   };
 
   console.log("re-rendered");

@@ -6,7 +6,7 @@ import SelectMonth from "./SelectMonth";
 import SelectYear from "./SelectYear";
 import InputNoOfTrees from "./InputNoOfTrees";
 // Other
-import SendFormData from "../utils/SendData";
+import SendFormData from "../utils/SendFormData";
 import sortTP from "../utils/sortTP";
 import defaultConfig from "../config/defaultCalcConfig";
 import { useDispatch } from "react-redux";
@@ -25,11 +25,12 @@ export default function App() {
     defaultValues: {
       annualCO2Emissions: "5.55",
       treePurchases: [
-        { month: "8", year: "2023", trees: "19" },
-        { month: "4", year: "2024", trees: "25" },
-        { month: "11", year: "2024", trees: "30" },
-        { month: "0", year: "2025", trees: "28" },
+        { month: "8", year: "2022", trees: "19" },
+        { month: "4", year: "2023", trees: "25" },
+        { month: "8", year: "2024", trees: "30" },
+        { month: "11", year: "2025", trees: "30" },
         { month: "2", year: "2026", trees: "35" },
+        { month: "11", year: "2026", trees: "30" },
         { month: "4", year: "2027", trees: "29" },
       ],
     },
@@ -44,7 +45,7 @@ export default function App() {
     data.treePurchases.sort(sortTP);
     data.config = defaultConfig;
     const resultData = await SendFormData(data);
-    // console.log(resultData);
+    // console.log("data recieved");
     dispatch(setResultData(resultData));
   };
 

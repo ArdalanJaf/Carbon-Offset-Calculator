@@ -12,3 +12,8 @@ ToDo:
 - styling
 - localStorage
 - advanced options
+- change all components to .jsx
+
+Poss added features:
+
+- config options for return graphData date format

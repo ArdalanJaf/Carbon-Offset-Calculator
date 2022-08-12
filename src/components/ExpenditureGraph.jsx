@@ -16,6 +16,8 @@ import {
   Text,
 } from "recharts";
 import numeral from "numeral";
+import unixToMY from "../utils/unixToMY";
+import GraphTooltip from "./GraphTooltip";
 
 function ExpenditureGraph() {
   const resultData = useSelector((state) => state.resultData);
@@ -43,7 +45,7 @@ function ExpenditureGraph() {
             axisLine={false}
             dataKey="date"
             tickFormatter={(date) => {
-              return `${date.slice(0, 3)}-${date.slice(-2)}`;
+              return unixToMY(date);
             }}
           />
 
@@ -54,7 +56,7 @@ function ExpenditureGraph() {
             tickFormatter={(cost) => `$${numeral(cost).format("0,000,000")}`}
           />
 
-          <Tooltip />
+          <Tooltip content={<GraphTooltip />} />
           <CartesianGrid vertical={false} />
           <Legend />
         </AreaChart>

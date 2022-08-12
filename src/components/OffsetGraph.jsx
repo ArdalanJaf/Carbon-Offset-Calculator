@@ -15,6 +15,8 @@ import {
   CartesianGrid,
   Text,
 } from "recharts";
+import GraphTooltip from "./GraphTooltip";
+import unixToMY from "../utils/unixToMY";
 
 function OffsetGraph() {
   const resultData = useSelector((state) => state.resultData);
@@ -56,11 +58,11 @@ function OffsetGraph() {
           <XAxis
             dataKey="date"
             tickFormatter={(date) => {
-              return `${date.slice(0, 3)}-${date.slice(-2)}`;
+              return unixToMY(date);
             }}
           />
           <YAxis dataKey="offset" axisLine={false} tickLine={false} />
-          <Tooltip />
+          <Tooltip content={<GraphTooltip type="offset" />} />
           <CartesianGrid vertical={false} />
           <Legend />
         </AreaChart>

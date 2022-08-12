@@ -21,9 +21,11 @@ export default function App() {
     control,
     formState: { errors },
     reset,
+    watch,
+    setValue,
   } = useForm({
     defaultValues: {
-      annualCO2Emissions: "5.55",
+      annualCO2Emissions: "444",
       treePurchases: [
         { month: "8", year: "2022", trees: "19" },
         { month: "4", year: "2023", trees: "25" },
@@ -45,7 +47,7 @@ export default function App() {
     data.treePurchases.sort(sortTP);
     data.config = defaultConfig;
     const resultData = await SendFormData(data);
-    // console.log("data recieved");
+    // console.log(resultData);
     dispatch(setResultData(resultData));
   };
 
@@ -53,7 +55,13 @@ export default function App() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <SelectCountry key={fields[0].id} control={control} errors={errors} />
+      <SelectCountry
+        key={fields[0].id}
+        control={control}
+        errors={errors}
+        watchAnnualC02Field={watch("annualCO2Emissions")}
+        setValue={setValue}
+      />
       <ul>
         {fields.map((field, index) => (
           <li key={field.id}>

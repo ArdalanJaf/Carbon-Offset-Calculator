@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import numeral from "numeral";
+import unixToMY from "../utils/unixToMY";
 
 function Summary() {
   const stats = useSelector((state) => state.resultData.stats);
@@ -12,7 +13,7 @@ function Summary() {
         <li>
           <p>
             You will achieve carbon neutrality in{" "}
-            <spam>{stats.carbonNeutralDate}</spam> with{" "}
+            <spam>{unixToMY(stats.carbonNeutralDate, true, true)}</spam> with{" "}
             <spam>{trees} trees</spam> planted. Your monthly maintenances cost
             at that point is{" "}
             <spam>${numeral(cost.upkeep).format("0,000,000.00")}</spam>.

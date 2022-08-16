@@ -10,10 +10,10 @@ const StyledDelButton = styled.button`
   transition: all 0.1s ease-in-out;
   svg {
     padding: 5px;
-    opacity: 0.6;
+    opacity: 1;
     &:hover {
       transform: scale(0.9);
-      opacity: 0.3;
+      opacity: 0.8;
     }
   }
 `;

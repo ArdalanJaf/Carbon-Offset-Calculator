@@ -17,6 +17,17 @@ const GlobalStyles = createGlobalStyle`
         /* font-weight: 600; */
     }
 
+
+  h2 {
+    font-weight: 400;
+    color: grey;
+    /* color: #000; */
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+    text-align: center;
+  }
+
 // Taken from https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link
   .screen-reader {
     border: 0;
@@ -41,16 +52,6 @@ const GlobalStyles = createGlobalStyle`
     width: auto;
   }
 
-    // #61892F
-// #86C232
-// #222629
-// #474B4F
-// #6B6E70
-
-    /* img {
-        max-width: 100%;
-    } */
 `;
 
 export default GlobalStyles;
-/* background-color: ${({ theme }) => theme.colors.body | "#fff"}; */

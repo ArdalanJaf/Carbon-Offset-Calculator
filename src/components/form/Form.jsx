@@ -84,8 +84,8 @@ export default function Form() {
             reset={reset}
           />
         </StyledFormField>
-        <StyledFlexButtons>
-          <StyledButton
+        {/* <StyledFlexButtons> */}
+        {/* <StyledButton
             type="button"
             style={{ backgroundColor: "skyblue" }}
             onClick={() => {
@@ -93,21 +93,9 @@ export default function Form() {
             }}
           >
             Save
-          </StyledButton>
-          <StyledSubmit type="submit" />
-          {/* <StyledButton
-            type="button"
-            style={{ backgroundColor: "red" }}
-            onClick={() => {
-              reset({
-                annualCO2Emissions: "",
-                treePurchases: [{ month: "", year: "", trees: "" }],
-              });
-            }}
-          >
-            Reset
           </StyledButton> */}
-        </StyledFlexButtons>
+        <StyledSubmit type="submit" />
+        {/* </StyledFlexButtons> */}
       </form>
     </ContentContainer>
   );

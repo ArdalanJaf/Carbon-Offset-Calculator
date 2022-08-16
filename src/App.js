@@ -23,12 +23,12 @@ function App() {
         <Container>
           <Header />
           <Flex>
-            <div className="flexedContainer">
+            <div className="flexedContainer fc1">
               <Form />
               {resultData.stats && <Summary />}
             </div>
             {resultData.stats && (
-              <div className="flexedContainer">
+              <div className="flexedContainer fc2">
                 <Graphs />
               </div>
             )}

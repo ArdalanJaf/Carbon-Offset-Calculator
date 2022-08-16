@@ -29,9 +29,9 @@ const StyledPurchaseTable = styled.table`
   }
 
   // Space between cells & border between rows (last row & delete col excluded).
-  tr:not(tr:last-of-type) th:not(th:last-of-type),
+  tr th:not(th:last-of-type),
   tr:not(tr:last-of-type) td:not(td:last-of-type) {
-    border-bottom: 2px solid cadetblue;
+    border-bottom: 1px solid skyblue;
     padding-right: 5px;
     padding-left: 5px;
   }
@@ -49,7 +49,7 @@ const StyledPurchaseTable = styled.table`
   // Bottom row button & total.
   tr:last-of-type {
     td:first-of-type button {
-      margin-left: 0.3em;
+      /* margin-left: 0.3em; */
     }
     td:nth-of-type(2) {
       p {
@@ -60,6 +60,10 @@ const StyledPurchaseTable = styled.table`
           opacity: 0.6;
         }
       }
+    }
+    td:last-of-type button {
+      position: relative;
+      bottom: 0.25em;
     }
   }
 

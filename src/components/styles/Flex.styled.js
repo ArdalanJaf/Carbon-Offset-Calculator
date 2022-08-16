@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const Flex = styled.div`
-  display: flex;
-  max-width: 1600px;
+  /* display: flex; */
+  /* max-width: 1600px; */
   margin: auto;
   justify-content: center;
 
@@ -11,10 +11,10 @@ const Flex = styled.div`
     max-width: 700px;
     flex: 1;
     &:first-of-type {
-      margin-right: 2em;
+      /* margin-right: 2em; */
     }
     &:last-of-type {
-      margin-left: 2em;
+      /* margin-left: 2em; */
     }
     & > div,
     & > form {
@@ -22,12 +22,9 @@ const Flex = styled.div`
     }
   }
 
-  /* @media (max-width: ${({ theme }) => theme.mobile}) {
-    flex-wrap: wrap;
-    & > div:nth-of-type(2) {
-      border-left: none;
-    } 
-  }*/
+  @media (min-width: ${({ theme }) => theme.tablet}) {
+    display: flex;
+  }
 `;
 
 export default Flex;

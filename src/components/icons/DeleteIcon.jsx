@@ -6,14 +6,14 @@ function DeleteIcon() {
       viewBox="0 0 38 38"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      stroke="burlywood"
     >
-      <circle cx="19" cy="19" r="17.5" stroke="#FF0404" strokeWidth="3" />
+      <circle cx="19" cy="19" r="17.5" strokeWidth="3" />
       <line
         x1="10.8284"
         y1="11"
         x2="27"
         y2="27.1716"
-        stroke="#FF0000"
         strokeWidth="4"
         strokeLinecap="round"
       />
@@ -22,7 +22,6 @@ function DeleteIcon() {
         y1="27.1716"
         x2="27.1716"
         y2="11"
-        stroke="#FF0000"
         strokeWidth="4"
         strokeLinecap="round"
       />

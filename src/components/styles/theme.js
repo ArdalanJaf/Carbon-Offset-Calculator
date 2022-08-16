@@ -7,6 +7,6 @@ export const theme = {
     light: "#e1f2fa",
   },
   mobileLarge: "500px",
-  tablet: "800px",
-  desktop: "1100px",
+  tablet: "768px",
+  desktop: "1024px",
 };

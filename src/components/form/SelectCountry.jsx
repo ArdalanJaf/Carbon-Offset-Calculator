@@ -4,6 +4,7 @@ import Select from "react-select";
 import countriesCO2 from "../../config/countriesCO2";
 import ErrorMessage from "./ErrorMessage";
 import StyledInput from "../styles/Input.Styled";
+import SelectCountryContainer from "../styles/SelectCountryContainer.styled.js";
 
 export default function SelectCountry(props) {
   const { control, errors, watchAnnualC02Field, setValue } = props;
@@ -41,44 +42,54 @@ export default function SelectCountry(props) {
   }, [watchAnnualC02Field]);
 
   return (
-    <>
+    <SelectCountryContainer>
       {/* <p>
         <span>{watchAnnualC02Field}</span> CO<sub>2</sub>kt
       </p> */}
-      <Controller
-        name="annualCO2Emissions"
-        control={control}
-        render={({ value, field }) => (
-          <Select
-            options={optionList}
-            // defaultInputValue to allow user to load previous from from API or local storage.
-            defaultInputValue={
-              field.value &&
-              optionList.find((c) => c.value === field.value).label
-            }
-            onChange={(val) => field.onChange(val.value)}
-            placeholder="Select country or custom..."
-            aria-label="Select your country to set your average annual CO2 emmisions "
-          />
-        )}
-        rules={{ required: true, maxLength: 10, pattern: /^[0-9]*[.]?[0-9]*$/ }}
-      />
-
-      {customActive && (
-        <StyledInput
-          defaultValue={watchAnnualC02Field}
-          onChange={(e) => {
-            setValue("annualCO2Emissions", e.target.value);
-            let OLCopy = optionList;
-            OLCopy[OLCopy.length - 1].value = e.target.value;
-            setOptionList(OLCopy);
+      <div>
+        <Controller
+          name="annualCO2Emissions"
+          control={control}
+          render={({ value, field }) => (
+            <Select
+              options={optionList}
+              // defaultInputValue to allow user to load previous from from API or local storage.
+              defaultInputValue={
+                field.value &&
+                optionList.find((c) => c.value === field.value).label
+              }
+              onChange={(val) => field.onChange(val.value)}
+              placeholder="Select country or custom"
+              aria-label="Select your country to set your average annual CO2 emmisions "
+            />
+          )}
+          rules={{
+            required: true,
+            maxLength: 2,
+            pattern: /0?[1-9][0-9]*|^[1-9][0-9]*$/,
           }}
         />
-      )}
+        {!customActive && errors.annualCO2Emissions && (
+          <ErrorMessage type={errors.annualCO2Emissions.type} />
+        )}
+      </div>
 
-      {errors.annualCO2Emissions && (
-        <ErrorMessage type={errors.annualCO2Emissions.type} />
+      {customActive && (
+        <div>
+          <StyledInput
+            defaultValue={watchAnnualC02Field}
+            onChange={(e) => {
+              setValue("annualCO2Emissions", e.target.value);
+              let OLCopy = optionList;
+              OLCopy[OLCopy.length - 1].value = e.target.value;
+              setOptionList(OLCopy);
+            }}
+          />
+          {errors.annualCO2Emissions && (
+            <ErrorMessage type={errors.annualCO2Emissions.type} />
+          )}
+        </div>
       )}
-    </>
+    </SelectCountryContainer>
   );
 }

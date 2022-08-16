@@ -38,6 +38,10 @@ function Summary() {
                   of your CO<sub>2</sub> emissions.
                 </>
               )}{" "}
+            </p>
+          </li>
+          <li>
+            <p>
               Your monthly maintenance cost at this point will be{" "}
               <span>${numeral(cost.upkeep).format("0,000,000.00")}</span>.
             </p>

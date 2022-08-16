@@ -2,37 +2,31 @@ import styled from "styled-components";
 
 const StyledHeader = styled.div`
   margin-bottom: 4em;
-  margin-left: 0.5em;
   display: flex;
   align-items: center;
-
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
+  flex-direction: column;
+  transition: all 0.1s ease-in-out;
 
   svg {
-    /* height: 80px; */
-    /* width: auto; */
-    /* filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.95)); */
-    margin-right: 1em;
+    height: 5em;
+    width: 3.5em;
+    margin-bottom: 0.5em;
+    transition: all 0.1s ease-in-out;
     > * {
       stroke: white;
       fill: cadetblue;
-      /* fill: #6fcf97; */
     }
   }
 
   h1 {
-    font-size: 3em;
-    font-weight: 300;
+    font-size: 1.4em;
+    font-weight: 500;
     margin: 0;
     padding: 0;
     color: #fff;
-    /* filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.95)); */
+    transition: all 0.1s ease-in-out;
 
-    /* width: 56%; */
+    /* filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.95)); */
   }
 
   p {
@@ -41,9 +35,30 @@ const StyledHeader = styled.div`
     font-weight: 600;
     color: #6fcf97;
   }
+  @media (min-width: ${({ theme }) => theme.mobileLarge}) {
+    h1 {
+      font-size: 1.7em;
+      font-weight: 500;
+    }
+  }
+  @media (min-width: ${({ theme }) => theme.tablet}) {
+    h1 {
+      font-size: 2em;
+    }
+  }
 
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-    /* Container-wrap: wrap; */
+  @media (min-width: ${({ theme }) => theme.desktop}) {
+    margin-left: 1em;
+    flex-direction: row; //
+    svg {
+      /* height: 100%;  */
+      /* width: 3.5em;  */
+      margin-right: 1em;
+      margin-bottom: 0;
+    }
+    h1 {
+      font-size: 2em;
+    }
   }
 `;
 

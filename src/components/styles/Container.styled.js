@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  padding: 2em 1em 3em;
+  padding: 2em 0.5em 3em;
   width: fit-content;
   margin: auto;
 
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-    /* Container-wrap: wrap; */
+  @media (min-width: ${({ theme }) => theme.mobileLarge}) {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 `;
 

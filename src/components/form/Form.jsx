@@ -8,6 +8,7 @@ import StyledFormField from "../styles/FormField.styled";
 import StyledButton from "../styles/Button.styled";
 import StyledSubmit from "../styles/Submit.styled";
 import ContentContainer from "../styles/ContentContainer.styled";
+import StyledFlexButtons from "../styles/FlexButtons.styled";
 // Other
 import SendFormData from "../../utils/SendFormData";
 import sortTP from "../../utils/sortTP";
@@ -68,6 +69,7 @@ export default function Form() {
           watchAnnualC02Field={watch("annualCO2Emissions")}
           setValue={setValue}
         />
+
         <h2>TREE PURCHASES</h2>
 
         <StyledFormField>
@@ -78,34 +80,34 @@ export default function Form() {
             register={register}
             remove={remove}
             append={append}
+            watch={watch}
+            reset={reset}
           />
-          <div>
-            <StyledButton
-              type="button"
-              style={{ backgroundColor: "skyblue" }}
-              onClick={() => {
-                append({ month: "", year: "", trees: "" });
-              }}
-            >
-              + Add Purchase
-            </StyledButton>
-
-            <StyledButton
-              type="button"
-              style={{ backgroundColor: "red" }}
-              onClick={() => {
-                reset({
-                  annualCO2Emissions: "",
-                  treePurchases: [{ month: "", year: "", trees: "" }],
-                });
-              }}
-            >
-              Reset
-            </StyledButton>
-          </div>
         </StyledFormField>
-
-        <StyledSubmit type="submit" />
+        <StyledFlexButtons>
+          <StyledButton
+            type="button"
+            style={{ backgroundColor: "skyblue" }}
+            onClick={() => {
+              console.log("Save");
+            }}
+          >
+            Save
+          </StyledButton>
+          <StyledSubmit type="submit" />
+          {/* <StyledButton
+            type="button"
+            style={{ backgroundColor: "red" }}
+            onClick={() => {
+              reset({
+                annualCO2Emissions: "",
+                treePurchases: [{ month: "", year: "", trees: "" }],
+              });
+            }}
+          >
+            Reset
+          </StyledButton> */}
+        </StyledFlexButtons>
       </form>
     </ContentContainer>
   );

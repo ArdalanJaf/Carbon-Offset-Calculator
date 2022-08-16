@@ -1,16 +1,10 @@
 import styled from "styled-components";
 
 const StyledPurchaseTable = styled.table`
-  /* padding: 0.5em; */
-  /* table-layout: fixed;  */
+  table-layout: fixed;
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
-  margin-bottom: 1em;
-  /* background-color: #f6faf5; */
-  /* border-radius: 10px; */
-  /* margin-bottom: 1em; */
-  /* background-color: #fff; */
 
   // space between rows
   th,
@@ -18,25 +12,31 @@ const StyledPurchaseTable = styled.table`
     padding: 0.5em 0;
   }
 
+  tr:last-of-type td {
+    padding-bottom: 0;
+  }
+
   // table header
   th {
     font-weight: 400;
-    font-style: italic;
-    /* text-align: start; */
+    /* font-style: italic; */
+    text-align: start;
+    text-indent: 0.5em;
+    opacity: 0.6;
     span {
       color: #000;
     }
   }
 
-  // Space between cells & border between rows
-  th:not(th:last-of-type),
-  td:not(td:last-of-type) {
+  // Space between cells & border between rows (last row & delete col excluded).
+  tr:not(tr:last-of-type) th:not(th:last-of-type),
+  tr:not(tr:last-of-type) td:not(td:last-of-type) {
     border-bottom: 2px solid cadetblue;
     padding-right: 5px;
     padding-left: 5px;
   }
 
-  // preserves format when error <p></p> displayed
+  // Preserves format when error <p></p> displayed.
   tr td {
     vertical-align: top;
   }
@@ -44,6 +44,23 @@ const StyledPurchaseTable = styled.table`
   tr td:last-of-type {
     width: 38px;
     vertical-align: top;
+  }
+
+  // Bottom row button & total.
+  tr:last-of-type {
+    td:first-of-type button {
+      margin-left: 0.3em;
+    }
+    td:nth-of-type(2) {
+      p {
+        text-indent: 0.5em;
+        margin-block-end: 0;
+        margin-block-start: 0;
+        span {
+          opacity: 0.6;
+        }
+      }
+    }
   }
 
   // preserves format if rows are numbered

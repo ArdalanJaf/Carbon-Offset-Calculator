@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   border: none;
   color: #fff;
   font-weight: 500;
+  height: fit-content;
   /* display: block; */
   /* text-align: center; */
   /* margin: auto; */

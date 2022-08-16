@@ -1,29 +1,25 @@
 import React from "react";
 import ErrorMessage from "./ErrorMessage";
+import StyledInput from "../styles/Input.Styled";
 
 export default function InputNoOfTrees(props) {
   const { index, register, errors } = props;
 
   return (
-    <>
-      <input
+    <td className="inputTrees">
+      <StyledInput
         {...register(`treePurchases.${index}.trees`, {
           required: true,
           pattern: /^[0-9]*$/,
-          maxLength: 10,
+          maxLength: 2,
         })}
-        placeholder="number of trees"
+        size="2"
+        placeholder="Trees"
+        aria-label="Input number of new trees."
       />
       {errors.treePurchases?.[`${index}`]?.trees && (
         <ErrorMessage type={errors.treePurchases[`${index}`].trees.type} />
       )}
-    </>
+    </td>
   );
 }
-
-//styles
-
-// height: 33px;
-// border: solid rgba(0, 0, 0, .2) 1px;
-// border-radius: 3px;
-// text-indent: 10px;

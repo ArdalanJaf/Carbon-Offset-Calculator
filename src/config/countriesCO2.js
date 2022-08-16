@@ -2,7 +2,7 @@
 // Stored in config file for organisation and in future scenario where API pulls this data.
 const countriesCO2 = [
   { name: "United States", annualCO2PerCapita: 15.52 },
-  { name: "United Kingdom", annualCO2PerCapita: 5.55 },
+  { name: "United Kingdom (5.55)", annualCO2PerCapita: 5.55 },
   { name: "Germany", annualCO2PerCapita: 9.44 },
   { name: "South Africa", annualCO2PerCapita: 6.95 },
   { name: "India", annualCO2PerCapita: 1.91 },

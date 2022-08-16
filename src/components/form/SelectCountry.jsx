@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import countriesCO2 from "../config/countriesCO2";
-import Select from "react-select";
 import { Controller } from "react-hook-form";
+import Select from "react-select";
+import countriesCO2 from "../../config/countriesCO2";
 import ErrorMessage from "./ErrorMessage";
+import StyledInput from "../styles/Input.Styled";
 
 export default function SelectCountry(props) {
   const { control, errors, watchAnnualC02Field, setValue } = props;
@@ -23,7 +24,6 @@ export default function SelectCountry(props) {
       };
     })
   );
-  console.log(optionList);
 
   useEffect(() => {
     // Activates custom input, on de-activation resets custom value to 0
@@ -42,6 +42,9 @@ export default function SelectCountry(props) {
 
   return (
     <>
+      {/* <p>
+        <span>{watchAnnualC02Field}</span> CO<sub>2</sub>kt
+      </p> */}
       <Controller
         name="annualCO2Emissions"
         control={control}
@@ -54,17 +57,16 @@ export default function SelectCountry(props) {
               optionList.find((c) => c.value === field.value).label
             }
             onChange={(val) => field.onChange(val.value)}
-            placeholder="Select country..."
+            placeholder="Select country or custom..."
             aria-label="Select your country to set your average annual CO2 emmisions "
           />
         )}
         rules={{ required: true, maxLength: 10, pattern: /^[0-9]*[.]?[0-9]*$/ }}
       />
 
-      <p>{watchAnnualC02Field}</p>
-
       {customActive && (
-        <input
+        <StyledInput
+          defaultValue={watchAnnualC02Field}
           onChange={(e) => {
             setValue("annualCO2Emissions", e.target.value);
             let OLCopy = optionList;

@@ -1,4 +1,4 @@
-import unixToMY from "../utils/unixToMY";
+import unixToMY from "../../utils/unixToMY";
 import numeral from "numeral";
 
 function GraphTooltip({ active, payload, label, type }) {

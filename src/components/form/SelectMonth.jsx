@@ -1,21 +1,20 @@
 import React from "react";
-import years from "../config/years";
-import Select from "react-select";
 import { Controller } from "react-hook-form";
+import Select from "react-select";
 import ErrorMessage from "./ErrorMessage";
+import { months } from "../../config/months";
 
-export default function Selectyear(props) {
+export default function SelectMonth(props) {
   const { index, control, errors } = props;
 
-  // Converts config years array into react-select format and into string for form.
-  const optionList = years.map((year) => {
-    return { value: year.toString(), label: year.toString() };
+  const optionList = months.map((month, index) => {
+    return { value: index.toString(), label: month };
   });
 
   return (
-    <>
+    <td className="selectMonth">
       <Controller
-        name={`treePurchases.${index}.year`}
+        name={`treePurchases.${index}.month`}
         control={control}
         render={({ value, field }) => (
           <Select
@@ -25,17 +24,20 @@ export default function Selectyear(props) {
               field.value &&
               optionList.find((c) => c.value === field.value).label
             }
-            //   value={yearsList.find((c) => c.value === value)}
             onChange={(val) => field.onChange(val.value)}
-            aria-label="Select year for trees purchase entry"
-            placeholder="select year"
+            placeholder="Month"
+            aria-label="Select month for trees purchase entry"
+            components={{
+              // DropdownIndicator: () => null,
+              IndicatorSeparator: () => null,
+            }}
           />
         )}
         rules={{ required: true }}
       />
-      {errors.treePurchases?.[`${index}`]?.year && (
-        <ErrorMessage type={errors.treePurchases[`${index}`].year.type} />
+      {errors.treePurchases?.[`${index}`]?.month && (
+        <ErrorMessage type={errors.treePurchases[`${index}`].month.type} />
       )}
-    </>
+    </td>
   );
 }

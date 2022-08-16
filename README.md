@@ -17,3 +17,4 @@ ToDo:
 Poss added features:
 
 - config options for return graphData date format
+- make countries alphabetical

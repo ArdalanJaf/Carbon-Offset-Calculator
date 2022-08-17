@@ -4,20 +4,16 @@ import {
   ResponsiveContainer,
   AreaChart,
   Area,
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
-  LabelList,
-  Label,
   CartesianGrid,
-  Text,
+  ReferenceLine,
 } from "recharts";
 import GraphTooltip from "./GraphTooltip";
 import unixToMY from "../../utils/unixToMY";
 import StyledGraph from "../styles/Graph.styled";
+import GraphLabel from "./GraphLabel";
 
 function OffsetGraph() {
   const resultData = useSelector((state) => state.resultData);
@@ -25,46 +21,67 @@ function OffsetGraph() {
 
   return (
     <StyledGraph>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="99%" height="99%">
         <AreaChart data={data}>
           <defs>
             <linearGradient id="offsetGradient" x1="1" x2="0" y1="0" y2="0">
-              <stop offset="0%" stopColor="#3894ff" stopOpacity={1} />
-              <stop offset="175%" stopColor="#3894ff" stopOpacity={0.2} />
-            </linearGradient>
-            <linearGradient
-              id="emissionsGradient"
-              x1="0"
-              x2="1.5"
-              y1="0"
-              y2="1"
-            >
-              <stop offset="0%" stopColor="red" stopOpacity={0.5} />
-              <stop offset="50%" stopColor="red" stopOpacity={0.1} />
+              <stop offset="10%" stopColor="#1c99ff" stopOpacity={1} />
+              <stop offset="75%" stopColor="#1c99ff" stopOpacity={0.4} />
             </linearGradient>
           </defs>
+
           <Area
             dataKey="offset"
-            stroke="#3894ff"
+            stroke="#008bfc"
             fill="url(#offsetGradient)"
             // fillOpacity={1}
           />
-          <Area
-            dataKey="emissions"
+          <ReferenceLine
+            // dataKey="emissions"
+            y={resultData.stats.monthlyEmissions}
             stroke="red"
+            strokeWidth={2}
+            ifOverflow="extendDomain"
+            // strokeDasharray="3 3"
             // fill="url(#emissionsGradient)"
             fill="none"
-          ></Area>
+            // label={{
+            //   value: `${resultData.stats.monthlyEmissions}kgCO2`,
+            //   offset: 10,
+            // }}
+
+            // label={
+            //   <GraphLabel
+            //     monthlyEmissions={resultData.stats.monthlyEmissions}
+            //     color="red"
+            //   />
+            // }
+          />
+
           <XAxis
             dataKey="date"
+            interval={Number((data.length / 6).toFixed(0))}
             tickFormatter={(date) => {
               return unixToMY(date);
             }}
+            tickMargin="6"
           />
-          <YAxis dataKey="offset" axisLine={false} tickLine={false} />
-          <Tooltip content={<GraphTooltip type="offset" />} />
+
+          <YAxis
+            dataKey="offset"
+            axisLine={false}
+            tickLine={false}
+            tickFormatter={(value) => `${value}kg`}
+          />
+          <Tooltip
+            content={
+              <GraphTooltip
+                type="offset"
+                monthlyEmissions={resultData.stats.monthlyEmissions}
+              />
+            }
+          />
           <CartesianGrid vertical={false} />
-          <Legend />
         </AreaChart>
       </ResponsiveContainer>
     </StyledGraph>

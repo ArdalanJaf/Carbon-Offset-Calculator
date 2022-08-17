@@ -15,9 +15,9 @@
     "react-redux": "^8.0.2",
     "react-scripts": "5.0.1",
     "react-select": "^5.4.0",
+    "react-tooltip": "^4.2.21",
     "recharts": "^2.1.13",
-    "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4"
+    "styled-components": "^5.3.5"
   },
   "scripts": {
     "start": "react-scripts start",

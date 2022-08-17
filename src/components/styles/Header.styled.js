@@ -48,11 +48,10 @@ const StyledHeader = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.desktop}) {
+    /* margin-bottom: 2em; */
     margin-left: 1em;
-    flex-direction: row; //
+    flex-direction: row;
     svg {
-      /* height: 100%;  */
-      /* width: 3.5em;  */
       margin-right: 1em;
       margin-bottom: 0;
     }

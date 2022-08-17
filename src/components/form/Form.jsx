@@ -14,6 +14,7 @@ import SendFormData from "../../utils/SendFormData";
 import sortTP from "../../utils/sortTP";
 import defaultConfig from "../../config/defaultCalcConfig";
 import { setResultData } from "../../app/resultDataSlice";
+import ReactTooltip from "react-tooltip";
 
 export default function Form() {
   const dispatch = useDispatch();
@@ -70,7 +71,15 @@ export default function Form() {
           setValue={setValue}
         />
 
-        <h2>TREE PURCHASES</h2>
+        <h2>
+          TREE PURCHASES
+          <span data-tip data-for="treePurchasesTip">
+            I
+          </span>
+        </h2>
+        <ReactTooltip id="treePurchasesTip" effect="float" place="right">
+          Add purchases based on blabla
+        </ReactTooltip>
 
         <StyledFormField>
           <PurchaseTable

@@ -11,7 +11,8 @@ import Container from "./components/styles/Container.styled";
 import GlobalStyles from "./components/styles/GlobalStyles.styled";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./components/styles/theme";
-import Background from "./components/styles/Background.styled";
+import StyledBackground from "./components/styles/Background.styled";
+// import Background from "./components/Background";
 
 function App() {
   const resultData = useSelector((state) => state.resultData);
@@ -19,22 +20,21 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Background style={{ backgroundImage: `url('/sky.jpg')` }}>
-        <Container>
-          <Header />
-          <Flex>
-            <div className="flexedContainer fc1">
-              <Form />
+      <StyledBackground style={{ backgroundImage: `url('/sky.jpg')` }} />
+      <Container>
+        <Header />
+        <Flex>
+          <div className="flexedContainer fc1">
+            <Form />
+          </div>
+          {resultData.stats && (
+            <div className="flexedContainer fc2">
               {resultData.stats && <Summary />}
+              <Graphs />
             </div>
-            {resultData.stats && (
-              <div className="flexedContainer fc2">
-                <Graphs />
-              </div>
-            )}
-          </Flex>
-        </Container>
-      </Background>
+          )}
+        </Flex>
+      </Container>
     </ThemeProvider>
   );
 }

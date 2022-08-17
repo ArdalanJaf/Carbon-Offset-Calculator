@@ -65,8 +65,8 @@ export default function SelectCountry(props) {
           )}
           rules={{
             required: true,
-            maxLength: 2,
-            pattern: /0?[1-9][0-9]*|^[1-9][0-9]*$/,
+            maxLength: 6,
+            pattern: /^[0-9]*[.]?[0-9]*$/,
           }}
         />
         {!customActive && errors.annualCO2Emissions && (

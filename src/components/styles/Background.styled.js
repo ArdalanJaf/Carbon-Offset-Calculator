@@ -1,13 +1,19 @@
 import styled from "styled-components";
 
-const Background = styled.div`
+const StyledBackground = styled.div`
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  max-width: 100vw;
-
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-  }
 `;
 
-export default Background;
+export default StyledBackground;
+
+// wrapping background style:
+/* background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw; */

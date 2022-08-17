@@ -10,7 +10,6 @@ function Graphs() {
         <h2>CARBON OFFSETS</h2>
         <OffsetGraph />
       </ContentContainer>
-
       <ContentContainer>
         <h2>CUMULATIVE EXPENDITURE</h2>
         <ExpenditureGraph />

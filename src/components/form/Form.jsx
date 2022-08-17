@@ -10,7 +10,7 @@ import StyledSubmit from "../styles/Submit.styled";
 import ContentContainer from "../styles/ContentContainer.styled";
 import StyledFlexButtons from "../styles/FlexButtons.styled";
 // Other
-import SendFormData from "../../utils/SendFormData";
+import sendFormData from "../../utils/sendFormData";
 import sortTP from "../../utils/sortTP";
 import defaultConfig from "../../config/defaultCalcConfig";
 import { setResultData } from "../../app/resultDataSlice";
@@ -50,8 +50,8 @@ export default function Form() {
   const onSubmit = async (data) => {
     console.log("submit");
     data.treePurchases.sort(sortTP);
-    data.config = defaultConfig;
-    const resultData = await SendFormData(data);
+    // data.config = defaultConfig;
+    const resultData = await sendFormData(data);
     // console.log(resultData);
     dispatch(setResultData(resultData));
   };

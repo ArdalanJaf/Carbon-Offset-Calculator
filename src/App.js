@@ -7,6 +7,7 @@ import Form from "./components/form/Form";
 import Summary from "./components/results/Summary";
 import Graphs from "./components/results/Graphs";
 import Container from "./components/styles/Container.styled";
+import Config from "./components/Config";
 
 import GlobalStyles from "./components/styles/GlobalStyles.styled";
 import { ThemeProvider } from "styled-components";
@@ -20,6 +21,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <Config />
       <StyledBackground style={{ backgroundImage: `url('/sky.jpg')` }} />
       <Container>
         <Header />

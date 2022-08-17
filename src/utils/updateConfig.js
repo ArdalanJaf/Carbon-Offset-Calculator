@@ -2,20 +2,20 @@ import { API_URL } from "../config/API_URL";
 import axios from "axios";
 
 // Send form to back-end.
-const sendFormData = async (payload) => {
-  console.log(payload);
+const updateConfig = async (payload) => {
+  // console.log(payload);
   try {
-    const result = await axios.post(API_URL + "/calculate", payload);
+    const result = await axios.post(API_URL + "/update_config", payload);
 
     if (result.data.status === 0) {
       console.log("API error: " + result);
     } else {
       // console.log(result.data);
-      return result.data.resultData;
+      return result.data;
     }
   } catch (error) {
     console.log("API down " + error);
   }
 };
 
-export default sendFormData;
+export default updateConfig;

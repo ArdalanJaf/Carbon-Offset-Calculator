@@ -18,6 +18,13 @@ export const FlexChild = styled.div`
     margin-bottom: 1em;
   }
 
+  &:first-of-type {
+    order: 2;
+  }
+  &:last-of-type {
+    order: 1;
+  }
+
   @media (min-width: ${({ theme }) => theme.tablet}) {
     max-width: 700px;
   }
@@ -27,9 +34,11 @@ export const FlexChild = styled.div`
 
     &:first-of-type {
       margin-right: 1em;
+      order: 1;
     }
     &:last-of-type {
       margin-left: 1em;
+      order: 2;
     }
   }
 `;

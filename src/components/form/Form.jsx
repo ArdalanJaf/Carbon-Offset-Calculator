@@ -27,18 +27,8 @@ export default function Form() {
     setValue,
   } = useForm({
     defaultValues: {
-      // annualCO2Emissions: undefined,
-      annualCO2Emissions: "5.55",
-      treePurchases: [
-        // { month: "", year: "", trees: "" },
-        { month: "8", year: "2022", trees: "19" },
-        { month: "4", year: "2023", trees: "25" },
-        { month: "8", year: "2024", trees: "30" },
-        { month: "11", year: "2025", trees: "30" },
-        { month: "2", year: "2026", trees: "35" },
-        { month: "11", year: "2026", trees: "30" },
-        { month: "4", year: "2027", trees: "29" },
-      ],
+      annualCO2Emissions: undefined,
+      treePurchases: [{ month: "", year: "", trees: "" }],
     },
   });
 
@@ -52,11 +42,7 @@ export default function Form() {
 
     // setStateSave(data);
     const resultData = await sendFormData(data);
-    try {
-      dispatch(setResultData(resultData));
-    } catch (error) {
-      console.log("submit error", error);
-    }
+    if (resultData !== undefined) dispatch(setResultData(resultData));
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // Components
 import SelectMonth from "./SelectMonth";
 import SelectYear from "./SelectYear";
@@ -9,25 +9,14 @@ import StyledDelButton from "../styles/DeleteButton.styled";
 import StyledButton from "../styles/Button.styled";
 import TrashIcon from "../icons/TrashIcon.jsx";
 
-export default function PurchaseTable({
-  fields,
-  control,
-  errors,
-  register,
-  remove,
-  append,
-  watch,
-  reset,
-}) {
+export default function PurchaseTable(props) {
+  const { fields, control, errors, register, remove, append, reset } = props;
+
   function getTotalTrees(object) {
     let totalTrees = 0;
     object.map((purchase) => (totalTrees += Number(purchase.trees)));
     return totalTrees;
   }
-
-  // useEffect(() => {
-  //   console.log(fields[0].trees);
-  // }, [watch(`treePurchases.0.trees`)]);
 
   return (
     <>
@@ -63,12 +52,13 @@ export default function PurchaseTable({
                 <StyledDelButton
                   type="button"
                   style={
-                    fields.length < 2 ? { opacity: "0.2" } : { opacity: "1" }
+                    fields.length < 2
+                      ? { opacity: "0.2", curser: "normal" }
+                      : { opacity: "1", cursor: "pointer" }
                   }
                   disabled={fields.length < 2 ? true : false}
                   onClick={() => {
                     if (fields.length > 1) remove(index);
-                    console.log(fields);
                   }}
                 >
                   <TrashIcon />
@@ -83,7 +73,7 @@ export default function PurchaseTable({
               {" "}
               <StyledButton
                 type="button"
-                style={{ backgroundColor: "skyblue" }}
+                style={{ backgroundColor: "rgb(218 186 108)" }}
                 onClick={() => {
                   append({ month: "", year: "", trees: "" });
                 }}
@@ -100,12 +90,14 @@ export default function PurchaseTable({
               <StyledDelButton
                 type="button"
                 style={
-                  fields.length < 2 ? { opacity: "0.2" } : { opacity: "1" }
+                  fields.length < 2
+                    ? { opacity: "0.2", curser: "normal" }
+                    : { opacity: "1", cursor: "pointer" }
                 }
                 disabled={fields.length < 2 ? true : false}
                 onClick={() => {
                   reset({
-                    annualCO2Emissions: "",
+                    annualCO2Emissions: undefined,
                     treePurchases: [{ month: "", year: "", trees: "" }],
                   });
                 }}
@@ -119,7 +111,7 @@ export default function PurchaseTable({
       </StyledPurchaseTable>
       {/* <StyledButton
         type="button"
-        style={{ backgroundColor: "skyblue" }}
+        style={{ backgroundColor: "#87ceeb" }}
         onClick={() => {
           console.log("Save");
         }}

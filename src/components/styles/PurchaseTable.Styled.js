@@ -31,7 +31,7 @@ const StyledPurchaseTable = styled.table`
   // Space between cells & border between rows (last row & delete col excluded).
   tr th:not(th:last-of-type),
   tr:not(tr:last-of-type) td:not(td:last-of-type) {
-    border-bottom: 1px solid skyblue;
+    border-bottom: 1px solid #87ceeb;
     padding-right: 5px;
     padding-left: 5px;
   }

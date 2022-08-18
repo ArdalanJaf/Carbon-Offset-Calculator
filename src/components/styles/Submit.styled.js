@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledSubmit = styled.input`
-  background-color: skyblue;
+  background-color: #87ceeb;
   border-radius: 5px;
   padding: 0.4em 1em;
   font-size: 1.5em;
@@ -13,11 +13,17 @@ const StyledSubmit = styled.input`
   margin: auto;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
   cursor: pointer;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-out;
 
   &:hover {
     transform: scale(0.95);
-    opacity: 0.7;
+
+    /* opacity: 0.7; */
+  }
+
+  &:active {
+    transform: scale(0.9);
+    /* background-color: lightgreen; */
   }
 `;
 

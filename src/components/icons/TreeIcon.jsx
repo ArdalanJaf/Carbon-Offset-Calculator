@@ -11,7 +11,7 @@ function TreeIcon() {
         cx="22.5"
         cy="22.5"
         r="21.5"
-        fill="white"
+        fill="#fff"
         stroke="#02FF0C"
         strokeWidth="2"
       />

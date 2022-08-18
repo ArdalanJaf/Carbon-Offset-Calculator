@@ -13,7 +13,6 @@ import {
 import GraphTooltip from "./GraphTooltip";
 import unixToMY from "../../utils/unixToMY";
 import StyledGraph from "../styles/Graph.styled";
-import GraphLabel from "./GraphLabel";
 
 function OffsetGraph() {
   const resultData = useSelector((state) => state.resultData);
@@ -37,25 +36,11 @@ function OffsetGraph() {
             // fillOpacity={1}
           />
           <ReferenceLine
-            // dataKey="emissions"
             y={resultData.stats.monthlyEmissions}
-            stroke="red"
-            strokeWidth={2}
+            stroke="#f0353b"
+            strokeWidth={3}
             ifOverflow="extendDomain"
-            // strokeDasharray="3 3"
-            // fill="url(#emissionsGradient)"
             fill="none"
-            // label={{
-            //   value: `${resultData.stats.monthlyEmissions}kgCO2`,
-            //   offset: 10,
-            // }}
-
-            // label={
-            //   <GraphLabel
-            //     monthlyEmissions={resultData.stats.monthlyEmissions}
-            //     color="red"
-            //   />
-            // }
           />
 
           <XAxis

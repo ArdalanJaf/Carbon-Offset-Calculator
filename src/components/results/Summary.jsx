@@ -27,29 +27,27 @@ function Summary() {
                 <>
                   You will achieve carbon neutrality in{" "}
                   <span>{unixToMY(carbonNeutralDate, true, true)}</span> with{" "}
-                  <span>{trees} trees</span> planted. Your monthly maintenance
-                  cost at this point will be{" "}
-                  <span>${numeral(cost.upkeep).format("0,000,000.00")}</span>.
+                  <span>{trees} trees</span> planted.
                 </>
               ) : (
                 <>
-                  You have not planted enough trees to achieve carbon
-                  neutrality, offsetting{" "}
+                  You will only offset{" "}
                   <span>
                     {((finalMonthlyOffset / monthlyEmissions) * 100).toFixed(2)}
                     %{" "}
                   </span>{" "}
-                  of your CO<sub>2</sub> emissions.
+                  of your CO<sub>2</sub> emissions. Purchase more trees to
+                  achieve carbon neutrality.
                 </>
-              )}{" "}
+              )}
             </p>
           </li>
-          {/* <li>
+          <li>
             <p>
               Your monthly maintenance cost at this point will be{" "}
               <span>${numeral(cost.upkeep).format("0,000,000.00")}</span>.
             </p>
-          </li> */}
+          </li>
           <li>
             <p>
               Your total expenditure over roughly {totalYears} years is{" "}

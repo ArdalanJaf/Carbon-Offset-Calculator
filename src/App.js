@@ -7,13 +7,12 @@ import Form from "./components/form/Form";
 import Summary from "./components/results/Summary";
 import Graphs from "./components/results/Graphs";
 import Container from "./components/styles/Container.styled";
-import Config from "./components/Config";
-
 import GlobalStyles from "./components/styles/GlobalStyles.styled";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./components/styles/theme";
 import StyledBackground from "./components/styles/Background.styled";
-// import Background from "./components/Background";
+import ConfigButton from "./components/ConfigButton";
+import Footer from "./components/Footer";
 
 function App() {
   const resultData = useSelector((state) => state.resultData);
@@ -21,21 +20,22 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Config />
       <StyledBackground style={{ backgroundImage: `url('/sky.jpg')` }} />
+      <ConfigButton />
       <Container>
         <Header />
         <Flex>
-          <div className="flexedContainer fc1">
+          <div>
             <Form />
           </div>
           {resultData.stats && (
-            <div className="flexedContainer fc2">
+            <div>
               {resultData.stats && <Summary />}
               <Graphs />
             </div>
           )}
         </Flex>
+        <Footer />
       </Container>
     </ThemeProvider>
   );

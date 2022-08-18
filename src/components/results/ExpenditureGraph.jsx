@@ -4,16 +4,10 @@ import {
   ResponsiveContainer,
   AreaChart,
   Area,
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
-  LabelList,
-  Label,
   CartesianGrid,
-  Text,
 } from "recharts";
 import numeral from "numeral";
 import unixToMY from "../../utils/unixToMY";
@@ -34,12 +28,7 @@ function ExpenditureGraph() {
               <stop offset="100%" stopColor="#f5ea4e" stopOpacity={1} />
             </linearGradient>
           </defs>
-          <Area
-            dataKey="expenditure"
-            stroke="#e0a604"
-            fill="url(#gradient)"
-            // fillOpacity={1}
-          />
+          <Area dataKey="expenditure" stroke="#e0a604" fill="url(#gradient)" />
 
           <XAxis
             dataKey="date"
@@ -55,12 +44,10 @@ function ExpenditureGraph() {
             axisLine={false}
             tickLine={false}
             tickFormatter={(cost) => `$${numeral(cost).format("0,000a")}`}
-            // turn to $##k
           />
 
           <Tooltip content={<GraphTooltip />} />
           <CartesianGrid vertical={false} />
-          {/* <Legend /> */}
         </AreaChart>
       </ResponsiveContainer>
     </StyledGraph>

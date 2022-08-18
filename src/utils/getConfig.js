@@ -2,10 +2,9 @@ import { API_URL } from "../config/API_URL";
 import axios from "axios";
 
 // Send form to back-end.
-const getConfig = async (payload) => {
-  // console.log(payload);
+const getConfig = async () => {
   try {
-    const result = await axios.get(API_URL + "/get_config", payload);
+    const result = await axios.get(API_URL + "/get_config");
 
     if (result.data.status === 0) {
       console.log("API error: " + result);

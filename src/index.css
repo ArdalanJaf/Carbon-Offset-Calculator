@@ -91,10 +91,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.root {
-  background-color: rgb(168, 178, 189, 0);
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

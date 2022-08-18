@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledHeader = styled.div`
-  margin-bottom: 4em;
+  margin-bottom: 3em;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -13,7 +13,7 @@ const StyledHeader = styled.div`
     margin-bottom: 0.5em;
     transition: all 0.1s ease-in-out;
     > * {
-      stroke: white;
+      stroke: #fff;
       fill: cadetblue;
     }
   }
@@ -49,12 +49,12 @@ const StyledHeader = styled.div`
 
   @media (min-width: ${({ theme }) => theme.desktop}) {
     /* margin-bottom: 2em; */
-    margin-left: 1em;
+    /* margin-left: 1em;
     flex-direction: row;
     svg {
       margin-right: 1em;
       margin-bottom: 0;
-    }
+    } */
     h1 {
       font-size: 2em;
     }

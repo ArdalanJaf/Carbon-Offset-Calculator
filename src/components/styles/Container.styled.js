@@ -5,6 +5,8 @@ const Container = styled.div`
   /* width: fit-content; */
   margin: auto;
   max-width: 1400px;
+  min-height: 100vh;
+  position: relative;
 
   @media (min-width: ${({ theme }) => theme.mobileLarge}) {
     padding-left: 1em;

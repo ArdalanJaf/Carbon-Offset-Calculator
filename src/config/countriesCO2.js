@@ -9,7 +9,7 @@ const countriesCO2 = [
   { name: "China (7.38)", annualCO2PerCapita: 7.38 },
   { name: "Singapore (8.56)", annualCO2PerCapita: 8.56 },
   { name: "Australia (17.1)", annualCO2PerCapita: 17.1 },
-  { name: "Custom", annualCO2PerCapita: 0 }, // Custom must always be last element in array!
+  { name: "Custom", annualCO2PerCapita: "" }, // Custom must always be last element in array!
 ];
 
 export default countriesCO2;

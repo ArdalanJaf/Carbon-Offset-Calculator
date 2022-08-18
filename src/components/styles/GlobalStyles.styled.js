@@ -20,12 +20,18 @@ const GlobalStyles = createGlobalStyle`
 
   h2 {
     font-weight: 400;
-    color: grey;
+    color: #808080;
     /* color: #000; */
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin-bottom: 0.5em;
     margin-top: 0;
     text-align: center;
+  }
+
+  @media (min-width: ${({ theme }) => theme.tablet}) {
+    h2 {
+      font-size: 1.5em;
+    }
   }
 
 // Taken from https://gomakethings.com/hidden-content-for-better-a11y/#hiding-the-link

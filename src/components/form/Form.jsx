@@ -5,19 +5,17 @@ import { useDispatch } from "react-redux";
 import SelectCountry from "./SelectCountry";
 import PurchaseTable from "./PurchaseTable";
 import StyledFormField from "../styles/FormField.styled";
-import StyledButton from "../styles/Button.styled";
 import StyledSubmit from "../styles/Submit.styled";
 import ContentContainer from "../styles/ContentContainer.styled";
-import StyledFlexButtons from "../styles/FlexButtons.styled";
+// import Save from "../Save";
 // Other
 import sendFormData from "../../utils/sendFormData";
 import sortTP from "../../utils/sortTP";
-import defaultConfig from "../../config/defaultCalcConfig";
 import { setResultData } from "../../app/resultDataSlice";
-import ReactTooltip from "react-tooltip";
 
 export default function Form() {
   const dispatch = useDispatch();
+  // const [stateSave, setStateSave] = useState();
 
   const {
     register,
@@ -29,8 +27,9 @@ export default function Form() {
     setValue,
   } = useForm({
     defaultValues: {
-      annualCO2Emissions: "5.55",
+      annualCO2Emissions: undefined,
       treePurchases: [
+        // { month: "", year: "", trees: "" },
         { month: "8", year: "2022", trees: "19" },
         { month: "4", year: "2023", trees: "25" },
         { month: "8", year: "2024", trees: "30" },
@@ -50,13 +49,15 @@ export default function Form() {
   const onSubmit = async (data) => {
     console.log("submit");
     data.treePurchases.sort(sortTP);
-    // data.config = defaultConfig;
-    const resultData = await sendFormData(data);
-    // console.log(resultData);
-    dispatch(setResultData(resultData));
-  };
 
-  console.log("re-rendered");
+    // setStateSave(data);
+    const resultData = await sendFormData(data);
+    try {
+      dispatch(setResultData(resultData));
+    } catch (error) {
+      console.log("submit error", error);
+    }
+  };
 
   return (
     <ContentContainer>
@@ -71,15 +72,7 @@ export default function Form() {
           setValue={setValue}
         />
 
-        <h2>
-          TREE PURCHASES
-          <span data-tip data-for="treePurchasesTip">
-            I
-          </span>
-        </h2>
-        <ReactTooltip id="treePurchasesTip" effect="float" place="right">
-          Add purchases based on blabla
-        </ReactTooltip>
+        <h2>TREE PURCHASES</h2>
 
         <StyledFormField>
           <PurchaseTable
@@ -93,18 +86,10 @@ export default function Form() {
             reset={reset}
           />
         </StyledFormField>
-        {/* <StyledFlexButtons> */}
-        {/* <StyledButton
-            type="button"
-            style={{ backgroundColor: "skyblue" }}
-            onClick={() => {
-              console.log("Save");
-            }}
-          >
-            Save
-          </StyledButton> */}
+
         <StyledSubmit type="submit" />
-        {/* </StyledFlexButtons> */}
+
+        {/* <Save reset={reset} stateSave={stateSave} setStateSave={setStateSave} /> */}
       </form>
     </ContentContainer>
   );

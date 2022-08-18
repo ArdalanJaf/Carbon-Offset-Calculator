@@ -2,9 +2,9 @@ import { API_URL } from "../config/API_URL";
 import axios from "axios";
 
 // Send form to back-end.
-const updateConfig = async (payload) => {
+const resetConfig = async () => {
   try {
-    const result = await axios.post(API_URL + "/update_config", payload);
+    const result = await axios.post(API_URL + "/reset_config");
 
     if (result.data.status === 0) {
       console.log("API error: " + result);
@@ -17,4 +17,4 @@ const updateConfig = async (payload) => {
   }
 };
 
-export default updateConfig;
+export default resetConfig;

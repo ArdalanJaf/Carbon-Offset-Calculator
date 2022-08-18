@@ -12,14 +12,13 @@ const StyledSummary = styled.div`
 
   li {
     list-style: none;
-    color: grey;
     &:not(li:last-of-type) p {
-      /* margin-bottom: 1em; */
+      margin-bottom: 1em;
     }
 
     p {
-      color: grey;
-      /* background-color: grey; */
+      color: #808080;
+      background-color: #fff;
       font-weight: 500;
       padding: 0.5em;
       border-radius: 10px;
@@ -28,7 +27,7 @@ const StyledSummary = styled.div`
 
       span {
         font-weight: 700;
-        color: grey;
+        color: #808080;
       }
     }
   }

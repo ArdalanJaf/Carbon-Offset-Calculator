@@ -11,7 +11,6 @@ import ConfigButton from "./components/ConfigButton";
 import Footer from "./components/Footer";
 import Container from "./components/styles/Container.styled";
 import GlobalStyles from "./components/styles/GlobalStyles.styled";
-
 import { FlexMain, FlexChild } from "./components/styles/Flex.styled";
 import StyledBackground from "./components/styles/Background.styled";
 
@@ -21,7 +20,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <StyledBackground style={{ backgroundImage: `url('/sky.jpg')` }} />
+      <StyledBackground />
       <ConfigButton />
       <Container>
         <Header />

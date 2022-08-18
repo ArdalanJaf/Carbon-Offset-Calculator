@@ -27,7 +27,8 @@ export default function Form() {
     setValue,
   } = useForm({
     defaultValues: {
-      annualCO2Emissions: "9",
+      // annualCO2Emissions: undefined,
+      annualCO2Emissions: "5.55",
       treePurchases: [
         // { month: "", year: "", trees: "" },
         { month: "8", year: "2022", trees: "19" },
@@ -47,7 +48,6 @@ export default function Form() {
   });
 
   const onSubmit = async (data) => {
-    console.log("submit");
     data.treePurchases.sort(sortTP);
 
     // setStateSave(data);

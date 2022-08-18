@@ -11,8 +11,8 @@ function TreeIcon() {
         cx="22.5"
         cy="22.5"
         r="21.5"
-        fill="#00989c"
         stroke="#fff"
+        fill="#00989C"
         strokeWidth="2"
       />
       <path

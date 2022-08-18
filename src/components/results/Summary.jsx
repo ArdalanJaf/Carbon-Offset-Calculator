@@ -15,7 +15,7 @@ function Summary() {
     finalMonthlyOffset,
     monthlyEmissions,
   } = stats;
-  console.log(finalMonthlyOffset, monthlyEmissions);
+
   return (
     <ContentContainer>
       <StyledSummary>

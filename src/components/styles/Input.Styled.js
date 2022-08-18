@@ -10,6 +10,14 @@ const StyledInput = styled.input`
   width: 100%;
   /* padding: 1em; */
   /* display: block; */
+  &:active,
+  &:focus-visible,
+  &:focus,
+  &:focus-within,
+  &:visited {
+    outline-color: rgb(38, 132, 255);
+    background-color: #fff;
+  }
 `;
 
 export default StyledInput;

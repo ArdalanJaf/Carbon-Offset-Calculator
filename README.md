@@ -33,7 +33,7 @@ node.js, react-redux, react-hook-form, recharts, styled-components, axios, expre
 - Refined UI (it's hard to make a calculator look engaging!), 
 - Fully responsive front-end down to 400px. 
 - Non-text features made screen-reader friendly.
-- Hosted with cPanel [here][https://carbon-offset-simulator.ardalanjaf.com/].
+- Hosted with cPanel [here](https://carbon-offset-simulator.ardalanjaf.com/).
 - When Neccesary, code commented.
 
 ### Choices explained
@@ -49,9 +49,8 @@ No react-bootstrap-table2?
 - Tooltips to help guide the user through the form. I did not want to clutter this minimal site with text, however in retrospect more information is needed.
 - Fix minor UX bugs: 
   - Tree-counter only updating upon Submit or Add Purchase. 
-  - 55 tree purchases per year limit.
   - Dynamic label for Carbon Emissions on the offset table.
-  - Entering annual emissions value should trigger API call to tell user how many trees they need to plant.
+  - Entering annual emissions value should trigger API call to tell user how many trees they need to plant to achieve carbon-neutrality.
 - Save system: I did actually implement a local storage save/load component, but felt it was too clunky for shipping. In retrospect a save feature (even in local storage) would be very welcome for UX, as it is labourious to enter in purchases. It would not be a lot more work to implement a user save feature to the SQL database. 
 - Option for user to have their results emailed to them.
 - Connect average country emission list to API to have all countries and data be more accurate.

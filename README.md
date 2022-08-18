@@ -1,7 +1,8 @@
 # Carbon Offset Simulator
 
-Choose annual-carbon-emissions by selecting a country average or entering a custom value. Enter purchases of trees (i.e. paying to offset carbon). Click submit and get data on how much carbon you will offset and how much it will cost!
-You can also change the calculator's configuration (tree cost, tree carbon offset, time for tree to grow) by clicking the cog in the top-left corner (note: this is design as admin feature).
+Plan your way to carbon-neutrality!
+Choose annual-carbon-emissions by selecting a country average or entering a custom value and enter purchases of trees. Click submit and get data on how much carbon you will offset, how long it will take and how much it will cost!
+You can also change the calculator's configuration (tree cost, tree carbon offset, time for tree to grow) by clicking the cog in the top-left corner (note: this is designed as an admin feature).
 
 node.js, react-redux, react-hook-form, recharts, styled-components, axios, express, mySQL
 

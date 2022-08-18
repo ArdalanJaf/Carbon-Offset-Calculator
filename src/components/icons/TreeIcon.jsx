@@ -11,18 +11,18 @@ function TreeIcon() {
         cx="22.5"
         cy="22.5"
         r="21.5"
-        fill="#fff"
-        stroke="#02FF0C"
+        fill="#00989c"
+        stroke="#fff"
         strokeWidth="2"
       />
       <path
         d="M35 18C35 24.5922 29.4395 30 22.5 30C15.5605 30 10 24.5922 10 18C10 11.4078 15.5605 6 22.5 6C29.4395 6 35 11.4078 35 18Z"
-        stroke="#02FF0C"
+        stroke="#fff"
         strokeWidth="2"
       />
       <path
         d="M22.5 18L22.5 40"
-        stroke="#02FF0C"
+        stroke="#fff"
         strokeWidth="2"
         strokeLinecap="round"
       />

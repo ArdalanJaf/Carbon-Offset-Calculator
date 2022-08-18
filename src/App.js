@@ -1,18 +1,19 @@
 import "./normalize.css";
 import React from "react";
 import { useSelector } from "react-redux";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./components/styles/theme";
 import Header from "./components/Header";
-import Flex from "./components/styles/Flex.styled";
 import Form from "./components/form/Form";
 import Summary from "./components/results/Summary";
 import Graphs from "./components/results/Graphs";
-import Container from "./components/styles/Container.styled";
-import GlobalStyles from "./components/styles/GlobalStyles.styled";
-import { ThemeProvider } from "styled-components";
-import { theme } from "./components/styles/theme";
-import StyledBackground from "./components/styles/Background.styled";
 import ConfigButton from "./components/ConfigButton";
 import Footer from "./components/Footer";
+import Container from "./components/styles/Container.styled";
+import GlobalStyles from "./components/styles/GlobalStyles.styled";
+
+import { FlexMain, FlexChild } from "./components/styles/Flex.styled";
+import StyledBackground from "./components/styles/Background.styled";
 
 function App() {
   const resultData = useSelector((state) => state.resultData);
@@ -24,17 +25,17 @@ function App() {
       <ConfigButton />
       <Container>
         <Header />
-        <Flex>
-          <div>
+        <FlexMain>
+          <FlexChild>
             <Form />
-          </div>
+          </FlexChild>
           {resultData.stats && (
-            <div>
+            <FlexChild>
               {resultData.stats && <Summary />}
               <Graphs />
-            </div>
+            </FlexChild>
           )}
-        </Flex>
+        </FlexMain>
         <Footer />
       </Container>
     </ThemeProvider>

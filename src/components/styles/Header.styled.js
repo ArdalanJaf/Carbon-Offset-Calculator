@@ -12,10 +12,6 @@ const StyledHeader = styled.div`
     width: 3.5em;
     margin-bottom: 0.5em;
     transition: all 0.1s ease-in-out;
-    > * {
-      stroke: #fff;
-      fill: cadetblue;
-    }
   }
 
   h1 {
@@ -48,13 +44,6 @@ const StyledHeader = styled.div`
   }
 
   @media (min-width: ${({ theme }) => theme.desktop}) {
-    /* margin-bottom: 2em; */
-    /* margin-left: 1em;
-    flex-direction: row;
-    svg {
-      margin-right: 1em;
-      margin-bottom: 0;
-    } */
     h1 {
       font-size: 2em;
     }

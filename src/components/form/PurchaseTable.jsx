@@ -3,11 +3,10 @@ import React from "react";
 import SelectMonth from "./SelectMonth";
 import SelectYear from "./SelectYear";
 import InputTrees from "./InputTrees";
-import DeleteIcon from "../icons/DeleteIcon";
+import DeleteRowButton from "./DeleteRowButton";
+import AddPurchaseButton from "./AddPurchaseButton";
 import StyledPurchaseTable from "../styles/PurchaseTable.Styled";
-import StyledDelButton from "../styles/DeleteButton.styled";
-import StyledButton from "../styles/Button.styled";
-import TrashIcon from "../icons/TrashIcon.jsx";
+import ResetButton from "./ResetButton";
 
 export default function PurchaseTable(props) {
   const { fields, control, errors, register, remove, append, reset } = props;
@@ -23,9 +22,6 @@ export default function PurchaseTable(props) {
       <StyledPurchaseTable>
         <thead>
           <tr>
-            {/* <th>
-            <span>#</span>
-          </th> */}
             <th>
               <span>Month</span>
             </th>
@@ -41,83 +37,39 @@ export default function PurchaseTable(props) {
         <tbody>
           {fields.map((field, index) => (
             <tr key={field.id}>
-              {/* <td>
-              <span>{index + 1}</span>
-            </td> */}
-              <SelectMonth index={index} control={control} errors={errors} />
-              <SelectYear index={index} control={control} errors={errors} />
-              <InputTrees index={index} errors={errors} register={register} />
-
               <td>
-                <StyledDelButton
-                  type="button"
-                  style={
-                    fields.length < 2
-                      ? { opacity: "0.2", curser: "normal" }
-                      : { opacity: "1", cursor: "pointer" }
-                  }
-                  disabled={fields.length < 2 ? true : false}
-                  onClick={() => {
-                    if (fields.length > 1) remove(index);
-                  }}
-                >
-                  <TrashIcon />
-                  <span className="screen-reader">Delete this purchase</span>
-                </StyledDelButton>
+                <SelectMonth index={index} control={control} errors={errors} />
+              </td>
+              <td>
+                <SelectYear index={index} control={control} errors={errors} />
+              </td>
+              <td>
+                <InputTrees index={index} errors={errors} register={register} />
+              </td>
+              <td>
+                <DeleteRowButton
+                  fields={fields}
+                  remove={remove}
+                  index={index}
+                />
               </td>
             </tr>
           ))}
           <tr>
-            {/* <td colSpan={2}></td> */}
             <td colSpan={2}>
-              {" "}
-              <StyledButton
-                type="button"
-                style={{ backgroundColor: "rgb(218 186 108)" }}
-                onClick={() => {
-                  append({ month: "", year: "", trees: "" });
-                }}
-              >
-                + Add Purchase
-              </StyledButton>
+              <AddPurchaseButton append={append} />
             </td>
-            <td colSpan={1}>
+            <td>
               <p>
                 <span>Total:</span> {getTotalTrees(fields)}
               </p>
             </td>
             <td>
-              <StyledDelButton
-                type="button"
-                style={
-                  fields.length < 2
-                    ? { opacity: "0.2", curser: "normal" }
-                    : { opacity: "1", cursor: "pointer" }
-                }
-                disabled={fields.length < 2 ? true : false}
-                onClick={() => {
-                  reset({
-                    annualCO2Emissions: undefined,
-                    treePurchases: [{ month: "", year: "", trees: "" }],
-                  });
-                }}
-              >
-                <DeleteIcon />
-                <span className="screen-reader">Reset table</span>
-              </StyledDelButton>
+              <ResetButton reset={reset} fields={fields} />
             </td>
           </tr>
         </tbody>
       </StyledPurchaseTable>
-      {/* <StyledButton
-        type="button"
-        style={{ backgroundColor: "#87ceeb" }}
-        onClick={() => {
-          console.log("Save");
-        }}
-      >
-        Save
-      </StyledButton> */}
     </>
   );
 }

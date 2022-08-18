@@ -6,7 +6,7 @@ export default function InputNoOfTrees(props) {
   const { index, register, errors } = props;
 
   return (
-    <td className="inputTrees">
+    <>
       <StyledInput
         {...register(`treePurchases.${index}.trees`, {
           required: true,
@@ -20,6 +20,6 @@ export default function InputNoOfTrees(props) {
       {errors.treePurchases?.[`${index}`]?.trees && (
         <ErrorMessage type={errors.treePurchases[`${index}`].trees.type} />
       )}
-    </td>
+    </>
   );
 }

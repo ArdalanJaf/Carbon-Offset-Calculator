@@ -2,19 +2,9 @@
 
 missing:
 
-- max 55 trees per year?
-  ...EZ WAY.... Year X === YEAR Y? Count trees... 55? return error
-
 - json stringify/parse data transfer?
 
-ToDo:
-
-- TOOLTIPS + TOOLTIP STYLING
-- MAKE SURE BACK WORKS...
-- HOST
-- NO RED!! ON GRAPH
-- read me...
-
+T
 Poss added features:
 
 -- dynamic sorting of field array (in order of date)

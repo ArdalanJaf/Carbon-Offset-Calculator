@@ -36,8 +36,6 @@ function GraphTooltip({ active, payload, label, type }) {
             </span>
           </p>
         )}
-
-        {/* <p>{JSON.stringify(payload, null, 2)}</p> */}
       </StyledGraphTooltip>
     );
   }

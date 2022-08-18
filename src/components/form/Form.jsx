@@ -27,7 +27,7 @@ export default function Form() {
     setValue,
   } = useForm({
     defaultValues: {
-      annualCO2Emissions: undefined,
+      annualCO2Emissions: "9",
       treePurchases: [
         // { month: "", year: "", trees: "" },
         { month: "8", year: "2022", trees: "19" },

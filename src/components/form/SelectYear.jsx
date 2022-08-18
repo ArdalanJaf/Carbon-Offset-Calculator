@@ -11,7 +11,7 @@ export default function Selectyear({ index, control, errors }) {
   });
 
   return (
-    <td className="selectYear">
+    <>
       <Controller
         name={`treePurchases.${index}.year`}
         control={control}
@@ -37,6 +37,6 @@ export default function Selectyear({ index, control, errors }) {
       {errors.treePurchases?.[`${index}`]?.year && (
         <ErrorMessage type={errors.treePurchases[`${index}`].year.type} />
       )}
-    </td>
+    </>
   );
 }

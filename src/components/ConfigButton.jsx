@@ -18,6 +18,7 @@ function ConfigButton() {
           <CogIcon />
         </div>
         <div ref={ref}>{isComponentVisible && <Config />}</div>
+        <span className="screen-reader">Admin config</span>
       </StyledConfigButton>
     </>
   );

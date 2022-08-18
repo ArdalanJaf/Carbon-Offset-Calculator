@@ -12,7 +12,7 @@ export default function SelectMonth(props) {
   });
 
   return (
-    <td className="selectMonth">
+    <>
       <Controller
         name={`treePurchases.${index}.month`}
         control={control}
@@ -38,6 +38,6 @@ export default function SelectMonth(props) {
       {errors.treePurchases?.[`${index}`]?.month && (
         <ErrorMessage type={errors.treePurchases[`${index}`].month.type} />
       )}
-    </td>
+    </>
   );
 }

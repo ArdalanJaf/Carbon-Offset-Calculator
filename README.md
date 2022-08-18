@@ -20,7 +20,7 @@ node.js, react-redux, react-hook-form, recharts, styled-components, axios, expre
 - **Note:** SQL database required for full functionality. 
   - Database: [API-Carbon-Offset-Calculator/mySQL/database.sql](https://github.com/ArdalanJaf/API-Carbon-Offset-Calculator/blob/main/mySQL/database.sql) 
   - To use without database (static configuration):
-   1. comment out line 12 & 13 [here](https://github.com/ArdalanJaf/API-Carbon-Offset-Calculator/blob/main/routes.js)
+   1. comment out line 12 & 13 in [routes](https://github.com/ArdalanJaf/API-Carbon-Offset-Calculator/blob/main/routes.js)
    2. un-comment line 14
 
 

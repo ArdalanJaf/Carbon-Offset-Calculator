@@ -13,12 +13,12 @@ node.js, react-redux, react-hook-form, recharts, styled-components, axios, expre
 - npm install
 - npm start
 
-### [Back-end API] (https://github.com/ArdalanJaf/API-Carbon-Offset-Calculator)
+### [Back-end API](https://github.com/ArdalanJaf/API-Carbon-Offset-Calculator)
 
 - npm install
 - nodemon server.js
 - **Note:** SQL database required for full functionality. 
-  - Database: [API-Carbon-Offset-Calculator/mySQL/database.sql] (https://github.com/ArdalanJaf/API-Carbon-Offset-Calculator/blob/main/mySQL/database.sql)
+  - Database: [API-Carbon-Offset-Calculator/mySQL/database.sql](https://github.com/ArdalanJaf/API-Carbon-Offset-Calculator/blob/main/mySQL/database.sql) 
   - To use without database (static configuration):
    1. comment out line 12 & 13 [here](https://github.com/ArdalanJaf/API-Carbon-Offset-Calculator/blob/main/routes.js)
    2. un-comment line 14
@@ -33,7 +33,7 @@ node.js, react-redux, react-hook-form, recharts, styled-components, axios, expre
 - Refined UI (it's hard to make a calculator look engaging!), 
 - Fully responsive front-end down to 400px. 
 - Non-text features made screen-reader friendly.
-- Hosted with cPanel (here)[https://carbon-offset-simulator.ardalanjaf.com/].
+- Hosted with cPanel [here][https://carbon-offset-simulator.ardalanjaf.com/].
 - When Nneccesary, code commented.
 
 ### Choices explained

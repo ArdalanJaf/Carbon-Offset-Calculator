@@ -40,7 +40,7 @@ node.js, react-redux, react-hook-form, recharts, styled-components, axios, expre
 
 **Styled-componenets, not Bootstrap?**
  
-I'm more familiar with SASS, so thought that the better option given the time restraints (I wanted to honour this challenge as a test to what can be made ASAP). I also hedged a bet that the *feel* of my site might stand out more if all the other applicants used bootstrap. As a bonus I am also trying to build up a styled-components library. 
+I'm more familiar with SASS, so thought that the better option given the time restraints (I wanted to honour this challenge as a test to what can be made ASAP). I also hedged a bet that the overall appearance might stand out more if all the other applicants used bootstrap. As a bonus I am also trying to build up a styled-components library. 
 
 **No react-bootstrap-table2?**
 
@@ -48,7 +48,7 @@ Initially I wanted the purchase table to be a UL, because of a particular visual
 
 ### Improvements 
 
-- Tooltips to help guide the user through the form. I did not want to clutter this minimal site with text, however in retrospect more information is needed.
+- Tooltips to help guide the user through the form. I did not want to clutter this minimal site with text, however in retrospect users could use more guidance.
 - Fix minor UX bugs: 
   - Tree-counter only updating upon Submit or Add Purchase. 
   - Dynamic label for Carbon Emissions on the offset table.

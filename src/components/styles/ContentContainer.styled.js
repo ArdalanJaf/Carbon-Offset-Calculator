@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ContentContainer = styled.div`
   background-color: rgba(239, 246, 247, 0.5);
-  backdrop-filter: opacity(0.5), blur(100px);
+  backdrop-filter: blur(3px);
   padding: 1em 0.5em;
   border-radius: 10px;
 

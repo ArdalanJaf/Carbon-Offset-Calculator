@@ -38,10 +38,12 @@ node.js, react-redux, react-hook-form, recharts, styled-components, axios, expre
 
 ### Choices explained
 
-**Styled-componenets, not Bootstrap?** 
+**Styled-componenets, not Bootstrap?**
+ 
 I'm more familiar with SASS, so thought that the better option given the time restraints (I wanted to honour this challenge as a test to what can be made ASAP). I also hedged a bet that the *feel* of my site might stand out more if all the other applicants used bootstrap. As a bonus I am also trying to build up a styled-components library. 
 
 **No react-bootstrap-table2?**
+
 Initially I wanted the purchase table to be a UL, because of a particular visual design I had in mind. However, this later caused me issues so for the sake of saving time I opted to turn it into a normal html table because it required minimal re-formating of my existing code.
 
 ### Improvements 

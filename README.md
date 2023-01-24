@@ -4,6 +4,8 @@ Plan your way to carbon-neutrality!
 Choose annual-carbon-emissions by selecting a country average or entering a custom value and enter purchases of trees. Click submit and get data on how much carbon you will offset, how long it will take and how much it will cost!
 You can also change the calculator's configuration (tree cost, tree carbon offset, time for tree to grow) by clicking the cog in the top-left corner (note: this is designed as an admin feature).
 
+[Live site](https://carbon-offset-simulator.ardalanjaf.com/)
+
 node.js, react-redux, react-hook-form, recharts, styled-components, axios, express, mySQL
 
 
@@ -33,7 +35,7 @@ node.js, react-redux, react-hook-form, recharts, styled-components, axios, expre
 - Refined UI (it's hard to make a calculator look engaging!), 
 - Fully responsive front-end down to 400px. 
 - Non-text features made screen-reader friendly.
-- Hosted with cPanel [here](https://carbon-offset-simulator.ardalanjaf.com/).
+- Hosted with cPanel.
 - When neccesary, code commented.
 
 ### Choices explained
